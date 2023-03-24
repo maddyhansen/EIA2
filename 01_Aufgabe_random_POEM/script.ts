@@ -1,4 +1,4 @@
-namespace RandomPoem {
+namespace RandomPoem_01 {
 
     let subject: string[] = ['Harry', 'Hermine', 'Ron', 'Hagrid', 'Snape', 'Dumbledore'];
     let praedicat: string[] = ['braut', 'liebt', 'studiert', 'hasst', 'zaubert', 'zerstört'];
