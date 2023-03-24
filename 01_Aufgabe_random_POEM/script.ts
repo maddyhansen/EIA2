@@ -30,5 +30,4 @@ namespace RandomPoem {
         // console.log("Word" + index)
         getVerse(subject, praedicat, object);
     }
-
 }
