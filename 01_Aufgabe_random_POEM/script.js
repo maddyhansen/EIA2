@@ -7,6 +7,7 @@ var RandomPoem;
     //console.log(subject, praedicat, object)
     // let subjectTotal: number = 6;
     // console.log(subjectTotal)
+    debugger;
     function getVerse(_subject, _praedicat, _object) {
         //console.log("Alohomora");
         let words = "";
