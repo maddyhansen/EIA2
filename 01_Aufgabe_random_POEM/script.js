@@ -1,13 +1,10 @@
 "use strict";
-var RandomPoem;
-(function (RandomPoem) {
+var RandomPoem_01;
+(function (RandomPoem_01) {
     let subject = ['Harry', 'Hermine', 'Ron', 'Hagrid', 'Snape', 'Dumbledore'];
     let praedicat = ['braut', 'liebt', 'studiert', 'hasst', 'zaubert', 'zerstört'];
     let object = ['Zaubertränke', 'den Grimm', 'Lupin', 'Hogwarts', 'die Karte des Rumtreibers', 'Dementoren'];
     //console.log(subject, praedicat, object)
-    // let subjectTotal: number = 6;
-    // console.log(subjectTotal)
-    debugger;
     function getVerse(_subject, _praedicat, _object) {
         //console.log("Alohomora");
         let words = "";
@@ -27,5 +24,5 @@ var RandomPoem;
         // console.log("Word" + index)
         getVerse(subject, praedicat, object);
     }
-})(RandomPoem || (RandomPoem = {}));
+})(RandomPoem_01 || (RandomPoem_01 = {}));
 //# sourceMappingURL=script.js.map
