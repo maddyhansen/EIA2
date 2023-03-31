@@ -8,6 +8,10 @@ namespace eventuebung {
   span.className = "span";
   document.querySelector("#div0")!.appendChild(span);
 
+  function btn(): void {
+    console.log("hi ich funktioniere")
+  }
+
   function handleLoad(): void {
     document.querySelector("#button")?.addEventListener('click',btn);
     document.addEventListener('mousemove', setInfoBox);
@@ -33,8 +37,10 @@ namespace eventuebung {
     console.log(_event.target, _event.currentTarget, _event.type, _event);
   }
 
-  function btn(): void {
-    console.log("hi ich funktioniere")
+  function customEvent(_event: MouseEvent): void {
+    const customEvent = new CustomEvent('BubblemeupBob', {
+      bubbles: true, 
+      detail:{bubble: setInfoBox}});
+      document.querySelector('button')!.dispatchEvent(customEvent)
   }
-
 }

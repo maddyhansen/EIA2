@@ -7,6 +7,9 @@ var eventuebung;
     span.innerHTML = "span";
     span.className = "span";
     document.querySelector("#div0").appendChild(span);
+    function btn() {
+        console.log("hi ich funktioniere");
+    }
     function handleLoad() {
         document.querySelector("#button")?.addEventListener('click', btn);
         document.addEventListener('mousemove', setInfoBox);
@@ -29,8 +32,12 @@ var eventuebung;
     function logInfo(_event) {
         console.log(_event.target, _event.currentTarget, _event.type, _event);
     }
-    function btn() {
-        console.log("hi ich funktioniere");
+    function customEvent(_event) {
+        const customEvent = new CustomEvent('BubblemeupBob', {
+            bubbles: true,
+            detail: { bubble: setInfoBox }
+        });
+        document.querySelector('button').dispatchEvent(customEvent);
     }
 })(eventuebung || (eventuebung = {}));
 //# sourceMappingURL=script.js.map
