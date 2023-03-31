@@ -11,7 +11,7 @@ var eventuebung;
         console.log("hi ich funktioniere");
     }
     function handleLoad() {
-        document.querySelector("#button")?.addEventListener('click', btn);
+        document.querySelector("button")?.addEventListener('click', btn);
         document.addEventListener('mousemove', setInfoBox);
         document.addEventListener('click', logInfo);
         document.addEventListener('keyup', logInfo);

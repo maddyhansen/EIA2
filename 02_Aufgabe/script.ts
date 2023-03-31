@@ -13,7 +13,7 @@ namespace eventuebung {
   }
 
   function handleLoad(): void {
-    document.querySelector("#button")?.addEventListener('click',btn);
+    document.querySelector("button")?.addEventListener('click',btn);
     document.addEventListener('mousemove', setInfoBox);
     document.addEventListener('click', logInfo);
     document.addEventListener('keyup', logInfo);
