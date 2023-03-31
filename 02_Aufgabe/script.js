@@ -3,6 +3,10 @@ var eventuebung;
 (function (eventuebung) {
     console.log("Hallo Start");
     window.addEventListener('load', handleLoad);
+    let span = document.createElement("span");
+    span.innerHTML = "span";
+    span.className = "span";
+    document.querySelector("#div0").appendChild(span);
     function handleLoad() {
         document.addEventListener('mousemove', setInfoBox);
         document.addEventListener('click', logInfo);
@@ -17,16 +21,16 @@ var eventuebung;
     function setInfoBox(_event) {
         let positionx = _event.clientX;
         let positiony = _event.clientY;
-        let span = document.createElement("span1");
-        span.innerHTML = "span";
-        span.className = "span";
-        document.querySelector("#div0").appendChild(span);
+        span.style.left = positionx + "px";
+        span.style.top = positiony + "px";
         span.innerText = "Mouseposition: x : " + positionx + ", Y: " + positiony + _event.target;
-        span.setAttribute('style', 'right: positionx + value + 10px');
-        //span.setAttribute('style','right: positiony + value + 10px');
     }
     function logInfo(_event) {
         console.log(_event.target, _event.currentTarget, _event.type, _event);
     }
+    function btn() {
+        console.log("hi ich funktioniere");
+    }
+    document.querySelector("#button")?.addEventListener('click', btn);
 })(eventuebung || (eventuebung = {}));
 //# sourceMappingURL=script.js.map

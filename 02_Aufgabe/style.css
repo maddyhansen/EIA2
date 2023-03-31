@@ -1,21 +1,21 @@
-#div0 {
+body{
     background-color: aqua; 
     margin-top: 30px;
     width: 400px;
     height: 300px;
     margin-left: 100px;
-}
-
-#div1{
-    background-color: aqua; 
-    margin-top: 30px;
-    width: 400px;
-    height: 300px;
-    margin-left: 700px;
+    display: inline-block;
 }
 
 span{
-    background-color: blue;
     position: fixed;
     offset-position: right;
+    top: 150px;
+    left: 150px;
+}
+
+#button {
+    background-color: blue;
+    color: white;
+    padding: 5px;
 }
