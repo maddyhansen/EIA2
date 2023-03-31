@@ -8,6 +8,7 @@ var eventuebung;
     span.className = "span";
     document.querySelector("#div0").appendChild(span);
     function handleLoad() {
+        document.querySelector("#button")?.addEventListener('click', btn);
         document.addEventListener('mousemove', setInfoBox);
         document.addEventListener('click', logInfo);
         document.addEventListener('keyup', logInfo);
@@ -31,6 +32,5 @@ var eventuebung;
     function btn() {
         console.log("hi ich funktioniere");
     }
-    document.querySelector("#button")?.addEventListener('click', btn);
 })(eventuebung || (eventuebung = {}));
 //# sourceMappingURL=script.js.map

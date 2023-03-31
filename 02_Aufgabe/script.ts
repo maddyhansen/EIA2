@@ -9,6 +9,7 @@ namespace eventuebung {
   document.querySelector("#div0")!.appendChild(span);
 
   function handleLoad(): void {
+    document.querySelector("#button")?.addEventListener('click',btn);
     document.addEventListener('mousemove', setInfoBox);
     document.addEventListener('click', logInfo);
     document.addEventListener('keyup', logInfo);
@@ -35,7 +36,5 @@ namespace eventuebung {
   function btn(): void {
     console.log("hi ich funktioniere")
   }
-
-document.querySelector("#button")?.addEventListener('click',btn)
 
 }
