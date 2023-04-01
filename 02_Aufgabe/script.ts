@@ -8,11 +8,6 @@ namespace eventuebung {
   span.className = "span";
   document.querySelector("#div0")!.appendChild(span);
 
-
-  function btn(): void {
-    console.log("I was clicked!", customEvent)
-  }
-
   function handleLoad(): void {
     document.querySelector("button")!.addEventListener('click', btn);
     document.addEventListener('mousemove', setInfoBox);
@@ -30,8 +25,8 @@ namespace eventuebung {
     let positionx: number = _event.clientX;
     let positiony: number = _event.clientY;
 
-   span.style.left = positionx + 10 + "px";
-   span.style.top = positiony + 10 + "px";
+    span.style.left = positionx + 10 + "px";
+    span.style.top = positiony + 10 + "px";
 
     span.innerText = "Mouseposition: x : " + positionx + ", Y: " + positiony + _event.target;
   }
@@ -41,9 +36,12 @@ namespace eventuebung {
   }
 
   function customEvent(_event: MouseEvent): void {
-  const customEvent = new CustomEvent('BubblemeupBob', {
-  bubbles: true, 
-  detail:{bubble: setInfoBox}});
-  document.querySelector('button')!.dispatchEvent(customEvent)
+    const customEvent = new CustomEvent("BubblemeupBob", {bubbles: true, detail: {name: "Bob" }});
+    document.addEventListener("BubblemeupBob", (e) =>console.log(e.bubbles, e.detail.name));
+    document.querySelector('button')!.dispatchEvent(customEvent); 
+  }
+
+  function btn(): void {
+
   }
 }

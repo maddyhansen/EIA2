@@ -7,9 +7,6 @@ var eventuebung;
     span.innerHTML = "span";
     span.className = "span";
     document.querySelector("#div0").appendChild(span);
-    function btn() {
-        console.log("I was clicked!", customEvent);
-    }
     function handleLoad() {
         document.querySelector("button").addEventListener('click', btn);
         document.addEventListener('mousemove', setInfoBox);
@@ -33,11 +30,11 @@ var eventuebung;
         console.log(_event.target, _event.currentTarget, _event.type, _event);
     }
     function customEvent(_event) {
-        const customEvent = new CustomEvent('BubblemeupBob', {
-            bubbles: true,
-            detail: { bubble: setInfoBox }
-        });
+        const customEvent = new CustomEvent("BubblemeupBob", { bubbles: true, detail: { name: "Bob" } });
+        document.addEventListener("BubblemeupBob", (e) => console.log(e.bubbles, e.detail.name));
         document.querySelector('button').dispatchEvent(customEvent);
+    }
+    function btn() {
     }
 })(eventuebung || (eventuebung = {}));
 //# sourceMappingURL=script.js.map
