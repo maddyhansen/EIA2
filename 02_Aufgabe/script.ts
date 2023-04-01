@@ -13,7 +13,7 @@ namespace eventuebung {
   }
 
   function handleLoad(): void {
-    document.querySelector("button")?.addEventListener('click',btn);
+    document.querySelector("#button")?.addEventListener('click',btn);
     document.addEventListener('mousemove', setInfoBox);
     document.addEventListener('click', logInfo);
     document.addEventListener('keyup', logInfo);
@@ -37,10 +37,10 @@ namespace eventuebung {
     console.log(_event.target, _event.currentTarget, _event.type, _event);
   }
 
-  function customEvent(_event: MouseEvent): void {
-    const customEvent = new CustomEvent('BubblemeupBob', {
-      bubbles: true, 
-      detail:{bubble: setInfoBox}});
-      document.querySelector('button')!.dispatchEvent(customEvent)
-  }
+  //function customEvent(_event: MouseEvent): void {
+    //const customEvent = new CustomEvent('BubblemeupBob', {
+    //  bubbles: true, 
+     // detail:{bubble: setInfoBox}});
+     // document.querySelector('button')!.dispatchEvent(customEvent)
+ // }
 }
