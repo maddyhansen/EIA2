@@ -29,12 +29,14 @@ var eventuebung;
     function logInfo(_event) {
         console.log(_event.target, _event.currentTarget, _event.type, _event);
     }
-    function customEvent(_event) {
-        const customEvent = new CustomEvent("BubblemeupBob", { bubbles: true, detail: { name: "Bob" } });
-        document.addEventListener("BubblemeupBob", (e) => console.log(e.bubbles, e.detail.name));
-        document.querySelector('button').dispatchEvent(customEvent);
-    }
+    const customevent = new CustomEvent("BubblemeupBob", { bubbles: true, detail: { name: "Bob" } });
     function btn() {
+        document.addEventListener("BubblemeupBob", customEvent);
+        document.dispatchEvent(customevent);
+    }
+    function customEvent() {
+        console.log(customevent.bubbles);
+        console.log(customevent.detail);
     }
 })(eventuebung || (eventuebung = {}));
 //# sourceMappingURL=script.js.map

@@ -35,13 +35,15 @@ namespace eventuebung {
     console.log(_event.target, _event.currentTarget, _event.type, _event);
   }
 
-  function customEvent(_event: MouseEvent): void {
-    const customEvent = new CustomEvent("BubblemeupBob", {bubbles: true, detail: {name: "Bob" }});
-    document.addEventListener("BubblemeupBob", (e) =>console.log(e.bubbles, e.detail.name));
-    document.querySelector('button')!.dispatchEvent(customEvent); 
+  const customevent = new CustomEvent("BubblemeupBob", { bubbles: true, detail: { name: "Bob" } });
+
+  function btn(){
+    document.addEventListener("BubblemeupBob", customEvent);
+    document.dispatchEvent(customevent);
   }
 
-  function btn(): void {
-
+  function customEvent() {
+    console.log(customevent.bubbles)
+    console.log(customevent.detail)
   }
 }
