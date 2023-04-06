@@ -1,0 +1,22 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 375px;
+    max-height: 667px;
+    background-color: #bcc5b4;
+}
+
+#h1 {
+text-align: center;
+background-color: black;
+color: white;
+}
+
+#h2 {
+    text-align: center;
+}
+
+#list{
+background: white;
+border: 5px;
+
+}

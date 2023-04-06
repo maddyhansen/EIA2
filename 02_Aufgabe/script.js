@@ -8,7 +8,7 @@ var eventuebung;
     span.className = "span";
     document.querySelector("#div0").appendChild(span);
     function handleLoad() {
-        document.querySelector("button").addEventListener('click', btn);
+        document.querySelector("button").addEventListener('click', btn); /*hier muss man document add eventlistener click und soll button auslösen*/
         document.addEventListener('mousemove', setInfoBox);
         document.addEventListener('click', logInfo);
         document.addEventListener('keyup', logInfo);
@@ -32,7 +32,7 @@ var eventuebung;
     const customevent = new CustomEvent("BubblemeupBob", { bubbles: true, detail: { name: "Bob" } });
     function btn() {
         document.addEventListener("BubblemeupBob", customEvent);
-        document.dispatchEvent(customevent);
+        document.dispatchEvent(customevent); /* und hier muss button dispatchen nicht document*/
     }
     function customEvent() {
         console.log(customevent.bubbles);

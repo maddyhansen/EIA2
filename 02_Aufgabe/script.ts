@@ -1,4 +1,4 @@
-namespace eventuebung {
+namespace eventuebung { /*also ich hab das custom event falsch*/
 
   console.log("Hallo Start")
   window.addEventListener('load', handleLoad)
@@ -9,7 +9,7 @@ namespace eventuebung {
   document.querySelector("#div0")!.appendChild(span);
 
   function handleLoad(): void {
-    document.querySelector("button")!.addEventListener('click', btn);
+    document.querySelector("button")!.addEventListener('click', btn); /*hier muss man document add eventlistener click und soll button auslösen*/
     document.addEventListener('mousemove', setInfoBox);
     document.addEventListener('click', logInfo);
     document.addEventListener('keyup', logInfo);
@@ -39,7 +39,7 @@ namespace eventuebung {
 
   function btn(){
     document.addEventListener("BubblemeupBob", customEvent);
-    document.dispatchEvent(customevent);
+    document.dispatchEvent(customevent); /* und hier muss button dispatchen nicht document*/
   }
 
   function customEvent() {
