@@ -5,9 +5,9 @@
     <!--Aufgabe: WG-To-Do App
     Name: Madeleine Luise Hansen
     Matrikelnummer: 272014
-    Links: W3C-Schools.de (Clients); W3C-Schools set attribute; 
+    Links: W3C-Schools.de (Namensliste);
     Datum: 08..04.2023
-    Autorenschaft:
+    Autorenschaft: Laura Kupferschmid (kurze Hilfe bei CSS Problemen), Lisa wegen einem "Form Fehler"
     -->
     <!--Open Console on your site/browser*/-->
     <meta charset="UTF-8">
@@ -21,20 +21,30 @@
 <body>
     <h1 id="h1">TO-DO</h1>
     <h2 id="h2">Liste</h2>
-    <button id="newtodo"> + </button>
+    <button id="newtodo"> NEW </button>
     <div id="list">
-        <div>
-        <input type="checkbox">
-        <span>Waschmaschine ausräumen / Linda / Datum / In Bearbeitung/ Kommentar</span>
-        <button id="edit"> Edit</button>
-        </div>
+        <input type="checkbox" name="todoo" id="check" value="HTML">
+        <label for="todoo">Linda, Waschmaschine ausräumen, Datum, In Bearbeitung, Kommentar</label><br>
+        <button id="edit">EDIT</button>
     </div>
-    <select name="names" id="name">Linda</select>
-    <textarea name="todo" id="todos" cols="30" rows="10"></textarea>
-    <input type="datetime-local">
-    <textarea name="" id="" cols="30" rows="10"></textarea>
-    <input type="radio">
-    <div id="formular">
+    <div>
+        <h2 id="h2">To-Do erstellen</h2>
+        <form id="formular">
+            <select name="names" id="name">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select> <br>
+            <textarea name="todo" id="todos" cols="6" placeholder="To-Do">To-Do</textarea> <br>
+            <input type="datetime-local" name="date" id="date"> <br>
+            <textarea name="comment" id="comment">Kommentar</textarea> <br>
+            <input type="radio" id="inwork" name="in_work" value="HTML">
+            <label for="inwork">In Bearbeitung</label><br>
+            <input type="radio" id="notinwork" name="not_in_work" value="HTML">
+            <label for="inwork">Zu bearbeiten</label><br>
+        <button id="add">ADD</button>
+    </form>
     </div>
 </body>
 

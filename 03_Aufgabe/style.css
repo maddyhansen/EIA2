@@ -3,20 +3,54 @@
     max-width: 375px;
     max-height: 667px;
     background-color: #bcc5b4;
-}
-
-#h1 {
-text-align: center;
-background-color: black;
-color: white;
-}
-
-#h2 {
     text-align: center;
 }
 
-#list{
-background: white;
-border: 5px;
+#h1 {
+    font-size: 25px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
 
+#h2 {
+    font-size: 20px;
+}
+
+#newtodo,
+#edit,
+#add {
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#list {
+    background-color: white;
+    height: 250px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+
+#formular {
+    margin-top: 30px;
+    background-color: white;
+    height: 300px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#name,
+#todos,
+#date,
+#comment,
+#inwork,
+#notinwork {
+    margin-top: 15px;
+}
+
+
+label {
+    background-color: white;
 }
