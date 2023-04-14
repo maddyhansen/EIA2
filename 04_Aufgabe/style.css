@@ -55,3 +55,7 @@
 label {
     background-color: white;
 }
+
+#hidden{
+    visibility: hidden; 
+}
