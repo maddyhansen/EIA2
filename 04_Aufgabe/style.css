@@ -20,7 +20,8 @@
 #newtodo,
 #edit,
 #add,
-#delete{
+#delete
+{
     margin-top: 15px;
     background-color: white;
     border-radius: 5px;
@@ -49,6 +50,7 @@
 #inwork,
 #notinwork {
     margin-top: 15px;
+    background-color: aliceblue;
 }
 
 
@@ -58,4 +60,8 @@ label {
 
 #hidden{
     visibility: hidden; 
+}
+
+#field{
+    background-color: white;
 }

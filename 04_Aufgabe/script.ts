@@ -5,10 +5,8 @@ namespace todoappII {
 
     //window.addEventListener('load', handleLoad);
 
-         document.getElementById("newtodo")!.addEventListener('click', newTodo);
-         document.getElementById("add")!.addEventListener('click', addToDO);
-         document.getElementById("add")!.addEventListener('click', addToDO);
-
+    document.getElementById("newtodo")!.addEventListener('click', newTodo);
+    document.getElementById("add")!.addEventListener('click', addToDO);
 
     const form: HTMLFormElement = <HTMLFormElement>document.querySelector('#formular');
     let div = <HTMLElement>document.querySelector("#hidden");
@@ -16,15 +14,6 @@ namespace todoappII {
     let InformationBack: string[] = [];
 
     /*Button edit und delete erstellt*/
-    let deletebutton = document.createElement("button");
-    deletebutton.setAttribute("id", "delete");
-    deletebutton.innerHTML = "Delete";
-
-    let editbutton = document.createElement("button");
-    editbutton.setAttribute("id", "edit");
-    editbutton.innerHTML = "Edit";
-    deletebutton!.addEventListener('click', deleteToDO);
-    editbutton!.addEventListener('click', editForm);
 
     /*holt die values aus dem html */
     function getValues(): string[] {
@@ -47,40 +36,53 @@ namespace todoappII {
     };
 
     /*macht das div mit aufgabe, extra funktion */
-    function generateTask(e : any) {
+    function generateTask() {
         formular!.style.setProperty("visibility", "visible");
         getValues();
         let newformular = document.createElement("div");
         newformular.setAttribute("id", "newtask");
-        let newtask = document.createElement("span");
+        let newtask = document.createElement("p");
         newformular.setAttribute("id", "newtask");
-        document.getElementById("div1")!.appendChild(newformular);
-        document.querySelector("#div1")!.appendChild(newtask);
+        document.getElementById("list")!.appendChild(newformular);
+        document.querySelector("#list")!.appendChild(newtask);
         newtask.innerHTML = "To-Do: " + InformationBack[0] + " ; Datum: " + InformationBack[1] + "  Kommentar: " + InformationBack[2] + "  WG-Mensch: " + InformationBack[3];
-
+        
+        let deletebutton = document.createElement("button");
+        deletebutton.setAttribute("id", "delete");
+        deletebutton.innerHTML = "Delete";
+    
+        let editbutton = document.createElement("button");
+        editbutton.setAttribute("id", "edit");
+        editbutton.innerHTML = "Edit";
+        editbutton!.addEventListener('click', editForm);
+        
         newtask.appendChild(deletebutton);
         newtask.appendChild(editbutton);
-        e.preventDefault();
+
+        function deleteToDO() {
+            console.log("Hi, I am done!")
+            newformular!.parentNode!.removeChild(newtask);
+        }/*noch nicht erledigt*/
+
+        deletebutton!.addEventListener('click', deleteToDO);
     }
 
     /***********/
 
-
     function newTodo() {
-        formular!.style.setProperty("visibility", "visible");
+        form!.style.setProperty("visibility", "visible");
         console.log("Hi, please fill the fields out for your ToDo")
-    } /***Erledigt, der tut was er tun soll */
+    } 
 
     function addToDO() {
-        generateTask(1);
+        form!.style.setProperty("visibility", "hidden");
+        generateTask();
         console.log("Hi, I am a ToDo added to the list!")
-    }/*läuft nicht*/
+    }
 
     function editForm() {
+        form!.style.setProperty("visibility", "visible");
         console.log("Hi, I am editing my todo")
     }/*noch nicht erledigt*/
 
-    function deleteToDO() {
-        console.log("Hi, I am done!")
-    }/*noch nicht erledigt*/
 }
