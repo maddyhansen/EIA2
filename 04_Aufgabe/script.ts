@@ -1,21 +1,15 @@
 namespace todoappII {
     console.log("Start")
 
-    /*ladet alle eventlistener*/
-
-    //window.addEventListener('load', handleLoad);
+    //window.addEventListener('load', handleLoad); (Rausgeflogen weil TS es mir zerschossen hat und die sachen dann immer neu geladen hat. Ich arbeite da dran, falls es sich nicht lösen lässt nehme ich es aus dem Diagramm raus, weil ich es ja schon gezeichnet habe vor dem coden :))
 
     document.getElementById("newtodo")!.addEventListener('click', newTodo);
     document.getElementById("add")!.addEventListener('click', addToDO);
 
     const form: HTMLFormElement = <HTMLFormElement>document.querySelector('#formular');
-    let div = <HTMLElement>document.querySelector("#hidden");
     let formular = document.getElementById('hidden')
     let InformationBack: string[] = [];
 
-    /*Button edit und delete erstellt*/
-
-    /*holt die values aus dem html */
     function getValues(): string[] {
         let workTask: string[] = [];
         const form: HTMLFormElement = <HTMLFormElement>document.querySelector('#formular');
@@ -35,7 +29,6 @@ namespace todoappII {
         console.log(InformationBack);
     };
 
-    /*macht das div mit aufgabe, extra funktion */
     function generateTask() {
         formular!.style.setProperty("visibility", "visible");
         getValues();
@@ -45,7 +38,7 @@ namespace todoappII {
         newformular.setAttribute("id", "newtask");
         document.getElementById("list")!.appendChild(newformular);
         document.querySelector("#list")!.appendChild(newtask);
-        newtask.innerHTML = "To-Do: " + InformationBack[0] + " ; Datum: " + InformationBack[1] + "  Kommentar: " + InformationBack[2] + "  WG-Mensch: " + InformationBack[3];
+        newtask.innerHTML = "WG-Mensch: " + InformationBack[0] + " ; Datum: " + InformationBack[2] + "  Kommentar: " + InformationBack[3] + "  To-Do: " + InformationBack[1] + " In Bearbeitung "  + InformationBack[4];
         
         let deletebutton = document.createElement("button");
         deletebutton.setAttribute("id", "delete");
@@ -62,12 +55,11 @@ namespace todoappII {
         function deleteToDO() {
             console.log("Hi, I am done!")
             newformular!.parentNode!.removeChild(newtask);
-        }/*noch nicht erledigt*/
+        }
 
         deletebutton!.addEventListener('click', deleteToDO);
     }
 
-    /***********/
 
     function newTodo() {
         form!.style.setProperty("visibility", "visible");
@@ -83,6 +75,6 @@ namespace todoappII {
     function editForm() {
         form!.style.setProperty("visibility", "visible");
         console.log("Hi, I am editing my todo")
-    }/*noch nicht erledigt*/
+    }
 
 }
