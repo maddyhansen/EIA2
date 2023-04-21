@@ -1,26 +1,18 @@
 {
-
-    interface Task{
-        name: string;
-        date: string;
-        todo: string;
-        comment: string;
-        work:string;
-    }
-
-    [category;string
-    ]:Task[]
-
-    let tasks: Task[] = [
-        {
-            name: "Peter",
-            date:
-        }
+    "TaskONE": [
+        {"name": "Linda"},
+        {"date": "02.06.2023" },
+        {"todo": "Bad 1 putzen" },
+        {"comment": "Wichtig wischen und teppiche waschen" },
+        {"work": "In Bearbeitung" }
     ],
-    [
-        {
-            name: "Peter",
-            date:
-        }
+    "TaskTWO": [
+        {"taskname": "Linus"},
+        {"date": "04.06.2023" },
+        {"todo": "Bad 2 putzen." },
+        {"comment": "ganz dringend, vor allem wischen" },
+        {"box": "In Bearbeitung" }
     ]
+
+
 }

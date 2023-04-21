@@ -23,6 +23,23 @@ namespace todoappIII {
     let newtask = document.createElement("p");
     newformular.setAttribute("id", "newtask");
 
+
+
+    //New Stuff
+    async function communicate(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
+        console.log("Response", response);
+
+        let offer: string = await response.text();
+        console.log(offer);
+        InformationBack = JSON.parse(offer); //In string umwandeln?
+    }
+
+    communicate("data.json");
+    console.log(communicate);
+
+    //End New stuff
+
     const form: HTMLFormElement = <HTMLFormElement>document.querySelector('#formular');
     let formular = document.getElementById('hidden')
     let InformationBack: string[] = [];
