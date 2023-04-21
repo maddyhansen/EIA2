@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Aufgabe: WG-To-Do App Teil III Datenstruktur
+    Name: Madeleine Luise Hansen
+    Matrikelnummer: 272014
+    Links: 
+    Datum: 22.04.2023
+    Autorenschaft: 
+    -->
+    <!--Open Console on your site/browser*/-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>To-Do-App</title>
+</head>
+
+<body>
+    <h1 id="h1">TO-DO</h1>
+    <h2 id="h2">Liste</h2>
+    <button id="newtodo"> NEW </button>
+    <div id="list">
+    </div>
+    <div id="hidden">
+        <h2 id="h2">To-Do erstellen</h2>
+        <form id="formular">
+            <fieldset id="field">
+            <select name="names" id="name">
+                <option value="linda">Linda</option>
+                <option value="linus">Linus</option>
+                <option value="hannes">Hannes</option>
+                <option value="nadine">Nadine</option>
+            </select> <br>
+            <textarea name="todo" id="todos" cols="6" placeholder="To-Do">To-Do</textarea> <br>
+            <input type="datetime-local" name="date" id="date"> <br>
+            <textarea name="comment" id="comment">Kommentar</textarea> <br>
+            <label>
+                <input type="radio" id="inwork" name="in_work" value="HTML">
+                In Bearbeitung</label><br>
+            <label>
+                <input type="radio" id="notinwork" name="in_work" value="HTML">
+                Zu bearbeiten</label><br>
+            <button id="add" type="button">ADD</button>
+        </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

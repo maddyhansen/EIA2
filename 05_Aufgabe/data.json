@@ -1,0 +1,26 @@
+{
+
+    interface Task{
+        name: string;
+        date: string;
+        todo: string;
+        comment: string;
+        work:string;
+    }
+
+    [category;string
+    ]:Task[]
+
+    let tasks: Task[] = [
+        {
+            name: "Peter",
+            date:
+        }
+    ],
+    [
+        {
+            name: "Peter",
+            date:
+        }
+    ]
+}
