@@ -1,6 +1,12 @@
 "use strict";
 var todoappIII;
 (function (todoappIII) {
+    //Ich hab noch um Aufschub gebeten aus folgenden Gründen: :)
+    //Mir sind meine Fehler zu hundert Prozent bewusst, bin noch dabei zu fixen.
+    //Ein Teil des ADs funktioniert, bin noch dabei den Rest zu machen 
+    //Ich brauche eine For Schleife die die ganzen Values zieht, aber da häng ich grade noch rum, weil
+    //das JSON mir grade noch nicht den Platzhalter ausgibt und noch ein paar andere Fehler in der Konsole ausgegeben werden..)
+    //Das mir das JSON nicht ausgegeben wird liegt glaube ich dran, dass ich irgendwo was falsch anspreche. Finds aber nicht.
     console.log("Start");
     window.addEventListener('load', handleLoad);
     function handleLoad() {
@@ -8,6 +14,9 @@ var todoappIII;
         document.getElementById("add").addEventListener('click', addToDO);
         deletebutton.addEventListener('click', deleteToDO);
         editbutton.addEventListener('click', editForm);
+        document.getElementById("add").addEventListener('click', sendTask);
+        let submit = document.querySelector("#add");
+        submit.addEventListener("click", sendTask);
     }
     let deletebutton = document.createElement("button");
     deletebutton.setAttribute("id", "delete");
@@ -20,14 +29,12 @@ var todoappIII;
     newformular.setAttribute("id", "newtask");
     let newtask = document.createElement("p");
     newformular.setAttribute("id", "newtask");
-    const form = document.querySelector('#formular');
+    let form = document.querySelector('#formular');
     let formular = document.getElementById('hidden');
     let InformationBack = [];
+    let formData = new FormData(form);
     function getValues() {
         let workTask = [];
-        const form = document.querySelector('#formular');
-        let formData = new FormData(form);
-        console.log(formData);
         let value0 = formData.get('names');
         let value1 = formData.get('todo');
         let value2 = formData.get('date');
@@ -53,8 +60,20 @@ var todoappIII;
         console.log("Hi, I am done!");
         newformular.parentNode.removeChild(newtask);
     }
-    function sendTask() {
+    async function sendTask(_event) {
+        let query = new URLSearchParams(formData);
+        await fetch("main.html" + query.toString());
+        alert("Submit Task");
     }
+    async function communicate(_url) {
+        let response = await fetch(_url);
+        let offer = await response.text();
+        let gotdata = JSON.parse(offer);
+        // gotdata is empty, offer is a string, cant read the stuff out
+        document.querySelector("#list").innerHTML = "WG-Mensch: " + offer;
+        console.log(gotdata);
+    }
+    communicate("Datainput.json");
     function newTodo() {
         form.style.setProperty("visibility", "visible");
         console.log("Hi, please fill the fields out for your ToDo");
@@ -62,7 +81,7 @@ var todoappIII;
     function addToDO() {
         form.style.setProperty("visibility", "hidden");
         generateTask();
-        sendTask();
+        sendTask(_event, Event); //ja hier meckert der irgendwie auch drum dabei ist es ja nicht falsch angegeben, laufen tuts aber trotzdem haha
         console.log("Hi, I am a ToDo added to the list!");
     }
     function editForm() {

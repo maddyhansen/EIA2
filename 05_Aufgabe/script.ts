@@ -1,4 +1,12 @@
 namespace todoappIII {
+    //Ich hab noch um Aufschub gebeten aus folgenden Gründen: :)
+    //Mir sind meine Fehler zu hundert Prozent bewusst, bin noch dabei zu fixen.
+    //Ein Teil des ADs funktioniert, bin noch dabei den Rest zu machen 
+    //Ich brauche eine For Schleife die die ganzen Values zieht, aber da häng ich grade noch rum, weil
+    //das JSON mir grade noch nicht den Platzhalter ausgibt und noch ein paar andere Fehler in der Konsole ausgegeben werden..)
+    //Das mir das JSON nicht ausgegeben wird liegt glaube ich dran, dass ich irgendwo was falsch anspreche. Finds aber nicht.
+
+
     console.log("Start")
 
     window.addEventListener('load', handleLoad);
@@ -7,6 +15,9 @@ namespace todoappIII {
         document.getElementById("add")!.addEventListener('click', addToDO);
         deletebutton!.addEventListener('click', deleteToDO);
         editbutton.addEventListener('click', editForm)
+        document.getElementById("add")!.addEventListener('click', sendTask);
+        let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#add");
+        submit.addEventListener("click", sendTask);
     }
 
     let deletebutton = document.createElement("button");
@@ -23,32 +34,25 @@ namespace todoappIII {
     let newtask = document.createElement("p");
     newformular.setAttribute("id", "newtask");
 
-
-
-    //New Stuff
-    async function communicate(_url: RequestInfo): Promise<void> {
-        let response: Response = await fetch(_url);
-        console.log("Response", response);
-
-        let offer: string = await response.text();
-        console.log(offer);
-        InformationBack = JSON.parse(offer); //In string umwandeln?
-    }
-
-    communicate("data.json");
-    console.log(communicate);
-
-    //End New stuff
-
-    const form: HTMLFormElement = <HTMLFormElement>document.querySelector('#formular');
+    let form: HTMLFormElement = <HTMLFormElement>document.querySelector('#formular');
     let formular = document.getElementById('hidden')
     let InformationBack: string[] = [];
+    let formData = new FormData(form);
+
+    export interface Task {
+        name: string;
+        todo: string;
+        date: string;
+        comment: string;
+        in_work: string;
+    }
+
+    export interface Datainput {
+        [key: string]: Task[];
+    }
 
     function getValues(): string[] {
         let workTask: string[] = [];
-        const form: HTMLFormElement = <HTMLFormElement>document.querySelector('#formular');
-        let formData = new FormData(form);
-        console.log(formData);
         let value0 = formData.get('names') as string;
         let value1 = formData.get('todo') as string;
         let value2 = formData.get('date') as string;
@@ -78,9 +82,21 @@ namespace todoappIII {
         newformular!.parentNode!.removeChild(newtask);
     }
 
-    function sendTask() {
-
+    async function sendTask(_event: Event): Promise<void> {
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        await fetch("main.html" + query.toString());
+        alert("Submit Task");
     }
+
+    async function communicate(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
+        let offer: string = await response.text();
+        let gotdata: Datainput = JSON.parse(offer);
+        // gotdata is empty, offer is a string, cant read the stuff out
+        document.querySelector("#list")!.innerHTML = "WG-Mensch: " + offer; 
+        console.log(gotdata);
+    }
+    communicate("Datainput.json");
 
     function newTodo() {
         form!.style.setProperty("visibility", "visible");
@@ -90,7 +106,7 @@ namespace todoappIII {
     function addToDO() {
         form!.style.setProperty("visibility", "hidden");
         generateTask();
-        sendTask();
+        sendTask(_event: Event); //ja hier meckert der irgendwie auch drum dabei ist es ja nicht falsch angegeben, laufen tuts aber trotzdem haha
         console.log("Hi, I am a ToDo added to the list!")
     }
 
@@ -99,5 +115,4 @@ namespace todoappIII {
         deleteToDO();
         console.log("Hi, I am editing my todo")
     }
-
 }
