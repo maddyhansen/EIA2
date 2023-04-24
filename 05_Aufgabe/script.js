@@ -60,9 +60,9 @@ var todoappIII;
         console.log("Hi, I am done!");
         newformular.parentNode.removeChild(newtask);
     }
-    async function sendTask(_event) {
+    async function sendTask() {
         let query = new URLSearchParams(formData);
-        await fetch("main.html" + query.toString());
+        await fetch("main.html?" + query.toString());
         alert("Submit Task");
     }
     async function communicate(_url) {
@@ -73,7 +73,7 @@ var todoappIII;
         document.querySelector("#list").innerHTML = "WG-Mensch: " + offer;
         console.log(gotdata);
     }
-    communicate("Datainput.json");
+    communicate("data.json");
     function newTodo() {
         form.style.setProperty("visibility", "visible");
         console.log("Hi, please fill the fields out for your ToDo");
@@ -81,7 +81,7 @@ var todoappIII;
     function addToDO() {
         form.style.setProperty("visibility", "hidden");
         generateTask();
-        sendTask(_event, Event); //ja hier meckert der irgendwie auch drum dabei ist es ja nicht falsch angegeben, laufen tuts aber trotzdem haha
+        sendTask(); //ja hier meckert der irgendwie auch drum dabei ist es ja nicht falsch angegeben, laufen tuts aber trotzdem haha
         console.log("Hi, I am a ToDo added to the list!");
     }
     function editForm() {
