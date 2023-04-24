@@ -80,6 +80,7 @@ namespace todoappIII {
     function deleteToDO() {
         console.log("Hi, I am done!")
         newformular!.parentNode!.removeChild(newtask);
+        alert("Youre deleting the task.")
     }
 
     async function sendTask(): Promise<void> {
@@ -106,7 +107,7 @@ namespace todoappIII {
     function addToDO() {
         form!.style.setProperty("visibility", "hidden");
         generateTask();
-        sendTask(); //ja hier meckert der irgendwie auch drum dabei ist es ja nicht falsch angegeben, laufen tuts aber trotzdem haha
+        sendTask();
         console.log("Hi, I am a ToDo added to the list!")
     }
 
@@ -114,5 +115,6 @@ namespace todoappIII {
         form!.style.setProperty("visibility", "visible");
         deleteToDO();
         console.log("Hi, I am editing my todo")
+        alert("Youre editing the task.")
     }
 }
