@@ -1,4 +1,4 @@
-namespace todoappIII {
+namespace todoappIIII {
 
 
     console.log("Start")
@@ -60,6 +60,18 @@ namespace todoappIII {
         console.log(InformationBack);
     };
 
+    interface FormDataJSON {
+        [key: string]: FormDataEntryValue | FormDataEntryValue[];}
+      
+      let formData1: FormData = new FormData(form);
+      let json: FormDataJSON = {};
+      
+      for (let key of formData1.keys())
+        if (!json[key]) {
+          let values: FormDataEntryValue[] = formData1.getAll(key);
+          json[key] = values.length > 1 ? values : values[0];
+        }
+
     function generateTask() {
         formular!.style.setProperty("visibility", "visible");
         getValues();
@@ -75,14 +87,21 @@ namespace todoappIII {
         console.log("Hi, I am done!")
         newformular!.parentNode!.removeChild(newtask);
         alert("Youre deleting the task.")
+        //command=delete&collection=NameOfCollection&id=IdOfTheDocument
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        query.set("delete", "collection");
+        query.set("collection", "ToDoOne");
+        query.set("id", "id"); // wie sag ich ihm get id?
+        query.set("data", JSON.stringify(json));
     }
 
     async function sendTask(): Promise<void> {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         query.set("command", "insert");
-        query.set("collection", "Orders");
-        query.set("data", JSON.stringify(formData));
-        await fetch("main.html?" + query.toString());
+        query.set("collection", "ToDoOne");
+        query.set("data", JSON.stringify(json));
+        await fetch("https://webuser.hs-furtwangen.de/~hansenma/database/?" + query.toString());
+        console.log(fetch);
         alert("Submit Task");
     }
 
@@ -111,6 +130,10 @@ namespace todoappIII {
     function editForm() {
         form!.style.setProperty("visibility", "visible");
         deleteToDO();
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        query.set("delete", "collection");
+        query.set("collection", "ToDoOne");
+        query.set("data", JSON.stringify(json));
         console.log("Hi, I am editing my todo")
         alert("Youre editing the task.")
     }

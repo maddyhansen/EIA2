@@ -1,6 +1,6 @@
 "use strict";
-var todoappIII;
-(function (todoappIII) {
+var todoappIIII;
+(function (todoappIIII) {
     console.log("Start");
     window.addEventListener('load', handleLoad);
     function handleLoad() {
@@ -41,6 +41,13 @@ var todoappIII;
         console.log(InformationBack);
     }
     ;
+    let formData1 = new FormData(form);
+    let json = {};
+    for (let key of formData1.keys())
+        if (!json[key]) {
+            let values = formData1.getAll(key);
+            json[key] = values.length > 1 ? values : values[0];
+        }
     function generateTask() {
         formular.style.setProperty("visibility", "visible");
         getValues();
@@ -54,13 +61,20 @@ var todoappIII;
         console.log("Hi, I am done!");
         newformular.parentNode.removeChild(newtask);
         alert("Youre deleting the task.");
+        //command=delete&collection=NameOfCollection&id=IdOfTheDocument
+        let query = new URLSearchParams(formData);
+        query.set("delete", "collection");
+        query.set("collection", "ToDoOne");
+        query.set("id", "id"); // wie sag ich ihm get id?
+        query.set("data", JSON.stringify(json));
     }
     async function sendTask() {
         let query = new URLSearchParams(formData);
         query.set("command", "insert");
-        query.set("collection", "Orders");
-        query.set("data", JSON.stringify(formData));
-        await fetch("main.html?" + query.toString());
+        query.set("collection", "ToDoOne");
+        query.set("data", JSON.stringify(json));
+        await fetch("https://webuser.hs-furtwangen.de/~hansenma/database/?" + query.toString());
+        console.log(fetch);
         alert("Submit Task");
     }
     async function communicate(_url) {
@@ -85,8 +99,12 @@ var todoappIII;
     function editForm() {
         form.style.setProperty("visibility", "visible");
         deleteToDO();
+        let query = new URLSearchParams(formData);
+        query.set("delete", "collection");
+        query.set("collection", "ToDoOne");
+        query.set("data", JSON.stringify(json));
         console.log("Hi, I am editing my todo");
         alert("Youre editing the task.");
     }
-})(todoappIII || (todoappIII = {}));
+})(todoappIIII || (todoappIIII = {}));
 //# sourceMappingURL=script.js.map
