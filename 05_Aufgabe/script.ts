@@ -1,4 +1,10 @@
 namespace todoappIII {
+    //Ich hab noch um Aufschub gebeten aus folgenden Gründen: :)
+    //Mir sind meine Fehler zu hundert Prozent bewusst, bin noch dabei zu fixen.
+    //Ein Teil des ADs funktioniert, bin noch dabei den Rest zu machen 
+    //Ich brauche eine For Schleife die die ganzen Values zieht, aber da häng ich grade noch rum, weil
+    //das JSON mir grade noch nicht den Platzhalter ausgibt und noch ein paar andere Fehler in der Konsole ausgegeben werden..)
+    //Das mir das JSON nicht ausgegeben wird liegt glaube ich dran, dass ich irgendwo was falsch anspreche. Finds aber nicht.
 
 
     console.log("Start")
@@ -79,9 +85,6 @@ namespace todoappIII {
 
     async function sendTask(): Promise<void> {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        query.set("command", "insert");
-        query.set("collection", "Orders");
-        query.set("data", JSON.stringify(formData));
         await fetch("main.html?" + query.toString());
         alert("Submit Task");
     }

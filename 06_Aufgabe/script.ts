@@ -87,7 +87,6 @@ namespace todoappIIII {
         console.log("Hi, I am done!")
         newformular!.parentNode!.removeChild(newtask);
         alert("Youre deleting the task.")
-        //command=delete&collection=NameOfCollection&id=IdOfTheDocument
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         query.set("delete", "collection");
         query.set("collection", "ToDoOne");
@@ -131,8 +130,9 @@ namespace todoappIIII {
         form!.style.setProperty("visibility", "visible");
         deleteToDO();
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        query.set("delete", "collection");
+        query.set("update", "collection");
         query.set("collection", "ToDoOne");
+        query.set("id", "id");
         query.set("data", JSON.stringify(json));
         console.log("Hi, I am editing my todo")
         alert("Youre editing the task.")
