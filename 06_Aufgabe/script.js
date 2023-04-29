@@ -1,6 +1,7 @@
 "use strict";
 var todoappIIII;
 (function (todoappIIII) {
+    //arbeite auf jeden Fall nächste Woche nach
     console.log("Start");
     window.addEventListener('load', handleLoad);
     function handleLoad() {
@@ -65,7 +66,7 @@ var todoappIIII;
         let query = new URLSearchParams(formData);
         query.set("command", "delete");
         query.set("collection", "ToDoOne");
-        query.set("delete", "id"); // wie sag ich ihm get id? //for in schleife 
+        query.set("delete", "id"); // wie sag ich ihm get id? //for in schleife - hat auch nicht so geklappt wie ich wollte, daher erstmal rausgeworfen 
         query.set("id", "?");
         await fetch("https://webuser.hs-furtwangen.de/~hansenma/database/" + "?" + query.toString());
     }
@@ -106,7 +107,7 @@ var todoappIIII;
         query.set("collection", "ToDoOne");
         query.set("update", "id");
         query.set("id", "?");
-        query.set("data", JSON.stringify(json));
+        query.set("data", JSON.stringify(json)); // benötige eine for schleife, die id sucht und diese dann im html anzeigt, hab das aber nicht geschafft und daher aus dem code erstmal rausgehauen.
         console.log("Hi, I am editing my todo");
         alert("Youre editing the task.");
     }
