@@ -37,6 +37,7 @@ var todoappIIII;
         workTask = [value0, value1, value2, value3, value4];
         console.log(workTask);
         InformationBack = workTask;
+        console.log(value0);
         return InformationBack;
         console.log(InformationBack);
     }
@@ -64,14 +65,15 @@ var todoappIIII;
         let query = new URLSearchParams(formData);
         query.set("delete", "collection");
         query.set("collection", "ToDoOne");
-        query.set("id", "id"); // wie sag ich ihm get id?
+        query.set("delete", "id"); // wie sag ich ihm get id? //for in schleife 
         query.set("data", JSON.stringify(json));
     }
     async function sendTask() {
         let query = new URLSearchParams(formData);
         query.set("command", "insert");
         query.set("collection", "ToDoOne");
-        query.set("data", JSON.stringify(json));
+        query.set("insert", "newtask");
+        //query.set("data", JSON.stringify(json));
         await fetch("https://webuser.hs-furtwangen.de/~hansenma/database/?" + query.toString());
         console.log(fetch);
         alert("Submit Task");
