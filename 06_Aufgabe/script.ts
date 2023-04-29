@@ -85,16 +85,22 @@ namespace todoappIIII {
         newtask.appendChild(editbutton);
     }
 
-    function deleteToDO() {
+    async function deleteToDO() {
         console.log("Hi, I am done!")
         newformular!.parentNode!.removeChild(newtask);
         alert("Youre deleting the task.")
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        query.set("delete", "collection");
+        query.set("command", "delete");
         query.set("collection", "ToDoOne");
         query.set("delete", "id"); // wie sag ich ihm get id? //for in schleife 
-        query.set("data", JSON.stringify(json));
-        
+        query.set("id", "?");
+        await fetch("https://webuser.hs-furtwangen.de/~hansenma/database/" + "?" + query.toString());
+
+        for (const key in formData1) {
+            if (query.set("delete", "id");(formData1, key)) {
+                const id = !json[key];
+            }
+        }
     }
 
     async function sendTask(): Promise<void> {
