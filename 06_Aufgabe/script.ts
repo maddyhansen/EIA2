@@ -95,12 +95,7 @@ namespace todoappIIII {
         query.set("delete", "id"); // wie sag ich ihm get id? //for in schleife 
         query.set("id", "?");
         await fetch("https://webuser.hs-furtwangen.de/~hansenma/database/" + "?" + query.toString());
-
-        for (const key in formData1) {
-            if (query.set("delete", "id");(formData1, key)) {
-                const id = !json[key];
-            }
-        }
+        
     }
 
     async function sendTask(): Promise<void> {
@@ -142,7 +137,8 @@ namespace todoappIIII {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         query.set("update", "collection");
         query.set("collection", "ToDoOne");
-        query.set("id", "id");
+        query.set("update", "id");
+        query.set("id", "?");
         query.set("data", JSON.stringify(json));
         console.log("Hi, I am editing my todo")
         alert("Youre editing the task.")
