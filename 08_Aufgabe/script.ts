@@ -38,7 +38,7 @@ namespace Canvas {
         crc2.fillStyle = "randomColor";
         console.log(randomColor);
 
-        return randomColor as String;
+        return randomColor as string;
         //crc2.fillRect(0, 0, canvas.width, canvas.height);
     }
 
