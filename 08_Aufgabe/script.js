@@ -29,6 +29,7 @@ var Canvas;
         document.body.style.backgroundColor = randomColor;
         crc2.fillStyle = "randomColor";
         console.log(randomColor);
+        return randomColor;
         //crc2.fillRect(0, 0, canvas.width, canvas.height);
     }
     /* function getRandomNumber(_max: number, _min: number = 0): number {
@@ -39,12 +40,9 @@ var Canvas;
         let nParticles = 10;
         let particle = new Path2D();
         let radiusParticle = 8;
-        let gradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParticle);
         particle.arc(0, 0, radiusParticle, 0, 2 * Math.PI);
-        gradient.addColorStop(0, "lightblue");
-        gradient.addColorStop(1, "blue");
         changeColor();
-        crc2.fillStyle = gradient;
+        crc2.fillStyle = "randomColor";
         crc2.save();
         crc2.translate(_position.x, _position.y);
         crc2.restore();

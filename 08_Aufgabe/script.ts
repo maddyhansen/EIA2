@@ -3,8 +3,8 @@ namespace Canvas {
     console.log("Its me, hi I am the problem its me!")
 
     interface Vector {
-        x: number; 
-        y: number; 
+        x: number;
+        y: number;
     }
 
     window.addEventListener('load', handleload);
@@ -21,7 +21,7 @@ namespace Canvas {
         // randomPattern();
         // randomDots();
         //drawLine();
-        drawParticle({x: 500, y:125}, {x: 1000, y: -500});
+        drawParticle({ x: 500, y: 125 }, { x: 1000, y: -500 });
 
     }
 
@@ -37,40 +37,39 @@ namespace Canvas {
         document.body.style.backgroundColor = randomColor;
         crc2.fillStyle = "randomColor";
         console.log(randomColor);
+
+        return randomColor as String;
         //crc2.fillRect(0, 0, canvas.width, canvas.height);
     }
 
-   /* function getRandomNumber(_max: number, _min: number = 0): number {
-        return Math.floor(Math.random() * _max) + _min;
-    }*/
+    /* function getRandomNumber(_max: number, _min: number = 0): number {
+         return Math.floor(Math.random() * _max) + _min;
+     }*/
 
-    
-        function drawParticle(_position: Vector, _size: Vector):void{
-            console.log("T2");
-            let nParticles: number = 10;
-            let particle: Path2D = new Path2D();
-              let radiusParticle: number = 8; 
-          let gradient: CanvasGradient = crc2.createRadialGradient(0,0,0,0,0,radiusParticle);
-        
-            particle.arc(0,0,radiusParticle,0,2*Math.PI);
-            gradient.addColorStop(0,"lightblue");
-            gradient.addColorStop(1,"blue"); 
-            changeColor();
-            crc2.fillStyle = gradient;
-        
-            crc2.save();  
-            crc2.translate(_position.x, _position.y);
-            crc2.restore(); 
-        
-            for (let drawn: number = 0; drawn < nParticles; drawn++){
-            let x: number = (Math.random() - 0.5)* _size.x; 
+
+    function drawParticle(_position: Vector, _size: Vector): void {
+        console.log("T2");
+        let nParticles: number = 10;
+        let particle: Path2D = new Path2D();
+        let radiusParticle: number = 8;
+
+        particle.arc(0, 0, radiusParticle, 0, 2 * Math.PI);
+        changeColor();
+        crc2.fillStyle = "randomColor";
+
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+        crc2.restore();
+
+        for (let drawn: number = 0; drawn < nParticles; drawn++) {
+            let x: number = (Math.random() - 0.5) * _size.x;
             let y: number = - (Math.random() * _size.y);
             crc2.save();
-            crc2.translate(x,y);    
+            crc2.translate(x, y);
             crc2.fill(particle);
-            crc2.restore(); 
-        
-            }
+            crc2.restore();
+
+        }
 
 
         /*function randomDots() 
