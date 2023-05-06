@@ -12,14 +12,16 @@ var Canvas;
         crc2 = canvas.getContext("2d");
         console.log("Iamhereeee");
         changeColor();
-        //drawPattern();
         getRandomNumber;
         drawBackground();
         drawCircles({ x: 500, y: 125 }, { x: 100, y: -100 });
         drawElipse({ x: 500, y: 125 }, { x: 300, y: -300 });
         drawTriangle({ x: 500, y: 125 }, { x: 1000, y: -500 });
-        drawLine();
+        drawCurvy({ x: 500, y: 125 }, { x: 1000, y: -500 });
+        drawLine({ x: 500, y: 125 }, { x: 1000, y: -500 });
         drawParticle({ x: 500, y: 125 }, { x: 1000, y: -500 });
+        drawCurve({ x: 500, y: 125 }, { x: 1000, y: -500 });
+        //drawPattern({ x: 500, y: 125 }, { x: 100, y: -100 });
     }
     function getRandomNumber(_max, _min = 0) {
         return Math.floor(Math.random() * _max) + _min;
@@ -73,33 +75,54 @@ var Canvas;
         crc2.fillStyle = changeColor();
         crc2.fill();
     }
-    function drawLine() {
+    function drawLine(_position, _size) {
         crc2.beginPath();
-        crc2.moveTo(150, 200);
-        crc2.closePath();
+        crc2.moveTo(crc2.canvas.width, crc2.canvas.height);
+        crc2.lineTo(getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height));
         crc2.strokeStyle = changeColor();
+        crc2.lineWidth = getRandomNumber(10, 1);
         crc2.stroke();
+        crc2.closePath();
     }
-    /*function drawPattern(): void {
+    function drawCurve(_position, _size) {
+        crc2.beginPath();
+        crc2.moveTo(crc2.canvas.width, crc2.canvas.height);
+        crc2.bezierCurveTo(getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height), getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height), getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height));
+        crc2.strokeStyle = changeColor();
+        crc2.lineWidth = getRandomNumber(10, 1);
+        crc2.stroke();
+        crc2.closePath();
+    }
+    function drawCurvy(_position, _size) {
+        crc2.beginPath();
+        crc2.moveTo(crc2.canvas.width, crc2.canvas.height);
+        crc2.bezierCurveTo(getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height), getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height), getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height));
+        crc2.fillStyle = changeColor();
+        crc2.lineWidth = getRandomNumber(10, 1);
+        crc2.fill();
+        crc2.closePath();
+    }
+    /*function drawPattern(_position: Vector, _size: Vector): CanvasRenderingContext2D {
         let pattern: CanvasRenderingContext2D = <CanvasRenderingContext2D>document.createElement('canvas').getContext('2d');
-        pattern.canvas.width = 3000;
-        pattern.canvas.height = 1500;
-
-        pattern.fillStyle = '#fec';
+        pattern.canvas.width = 600;
+        pattern.canvas.height = 600;
+        pattern.fillStyle = changeColor();
         pattern.fillRect(0, 0, pattern.canvas.width, pattern.canvas.height);
+        pattern.beginPath();
         pattern.moveTo(0, 10);
-        pattern.moveTo(0, 10);
-        pattern.lineTo(10, 10);
-        pattern.lineTo(20, 0);
-        pattern.lineTo(30, 0);
-        pattern.lineTo(40, 10);
-        pattern.lineTo(30, 20);
-        pattern.lineTo(20, 20);
-        pattern.lineTo(10, 10);
+        pattern.lineTo(getRandomNumber(600, 600), getRandomNumber(600, 600));
+        pattern.lineTo(getRandomNumber(600, 600), getRandomNumber(600, 600));
+        pattern.lineTo(getRandomNumber(600, 600), getRandomNumber(600, 600));
+        pattern.lineTo(getRandomNumber(600, 600), getRandomNumber(600, 600));
+        pattern.lineTo(getRandomNumber(600, 600), getRandomNumber(600, 600));
+        pattern.lineTo(getRandomNumber(600, 600), getRandomNumber(600, 600));
+        pattern.lineTo(getRandomNumber(600, 600), getRandomNumber(600, 600));
+        pattern.closePath();
+
+        pattern.strokeStyle = changeColor();
         pattern.stroke();
 
-        crc2.fillStyle = crc2.createPattern(pattern.canvas, 'repeat');
-        crc2.fillRect(0, 0, canvas.width, canvas.height);
+        return pattern;
     }*/
     function drawParticle(_position, _size) {
         let nParticles = 10;
@@ -107,6 +130,7 @@ var Canvas;
         let radiusParticle = 8;
         particle.arc(10, 10, radiusParticle, 10, 10 * Math.PI);
         crc2.fillStyle = changeColor();
+        crc2.rotate(getRandomNumber(500, 400));
         crc2.save();
         crc2.translate(_position.x, _position.y);
         crc2.restore();
