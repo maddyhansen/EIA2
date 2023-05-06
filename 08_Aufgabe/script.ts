@@ -66,7 +66,7 @@ namespace Canvas {
         crc2.lineTo(triangleX1, triangleY1);
         crc2.closePath();
         crc2.fillStyle = changeColor();
-        
+
         crc2.fill();
     }
 
@@ -98,6 +98,7 @@ namespace Canvas {
         crc2.beginPath();
         crc2.moveTo(crc2.canvas.width, crc2.canvas.height);
         crc2.lineTo(getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height));
+        crc2.rotate(getRandomNumber(500,400))
         crc2.strokeStyle = changeColor();
         crc2.lineWidth = getRandomNumber(10, 1)
         crc2.stroke();
@@ -110,7 +111,7 @@ namespace Canvas {
         crc2.bezierCurveTo(getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height),
             getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height),
             getRandomNumber(crc2.canvas.width), getRandomNumber(crc2.canvas.height));
-
+        crc2.rotate(getRandomNumber(500, 400))
         crc2.strokeStyle = changeColor();
         crc2.lineWidth = getRandomNumber(10, 1)
         crc2.stroke();
@@ -160,7 +161,7 @@ namespace Canvas {
 
         particle.arc(10, 10, radiusParticle, 10, 10 * Math.PI);
         crc2.fillStyle = changeColor();
-        crc2.rotate(getRandomNumber(500,400))
+        crc2.rotate(getRandomNumber(500, 400))
         crc2.save();
         crc2.translate(_position.x, _position.y);
         crc2.restore();
