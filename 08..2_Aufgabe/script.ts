@@ -285,4 +285,34 @@ namespace FlyingPeopleAlps {
         crc2.restore();
     }
 
+    const circle = function (_position.x , _position.y, radius, fillCircle) {
+        crc2.beginPath();
+        crc2.arc(x, y, radius, 0, Math.PI * 2, false);
+        if (fillCircle) {
+          crc2.fill();
+        } else {
+          crc2.stroke();
+        }
+      };
+
+    function drawBee(x, y) {
+        crc2.lineWidth = 2;
+        crc2.strokeStyle = "black";
+        crc2.fillStyle = "#ffff80";
+      
+        circle(x, y, 8, true);
+        circle(x, y, 8, false);
+        circle(x - 5, y - 11, 5, false);
+        circle(x + 5, y - 11, 5, false);
+        circle(x - 2, y - 1, 2, false);
+        circle(x + 2, y - 1, 2, false);
+      }; 
+
+      function flying(){
+
+        crc2.beginPath();
+        
+
+      };
+
 }
