@@ -21,11 +21,12 @@ var FlyingPeopleAlps;
         drawTriangle({ x: 0, y: 440 });
         drawLandingCircle({ x: 400, y: 500 }, 190, 30);
         drawShack({ x: 700, y: 550 });
-        drawWindSock({ x: 350, y: 580 });
+        drawWindSock({ x: 380, y: 500 });
         drawTree({ x: 90, y: 190 });
         drawTree1({ x: 400, y: 190 });
         drawTree2({ x: 440, y: 190 });
         drawTree3({ x: 360, y: 190 });
+        drawBee({ x: 360, y: 190 });
         console.log(horizon);
     }
     function drawBackground() {
@@ -158,18 +159,29 @@ var FlyingPeopleAlps;
         crc2.restore();
     }
     function drawWindSock(_position) {
-        console.log("WindSock", _position);
+        console.log("Windsock", _position.x, _position.y);
         crc2.save();
         crc2.translate(_position.x, _position.y);
         crc2.beginPath();
-        crc2.moveTo(0, 0);
-        crc2.lineTo(0, -80);
-        crc2.strokeStyle = "black";
-        crc2.lineWidth = 2;
-        crc2.stroke();
+        crc2.rect(70, -20, 5, 50);
+        crc2.closePath();
+        crc2.fillStyle = "black";
+        crc2.fill();
         crc2.beginPath();
-        crc2.ellipse(30, -80, 30, 10, Math.PI, 0, 1.75 * Math.PI);
+        crc2.bezierCurveTo(72, -14, 100, -40, 150, -25);
+        crc2.lineTo(152, -55);
+        crc2.bezierCurveTo(150, -55, 100, -80, 70, -55);
         crc2.fillStyle = "red";
+        crc2.fill();
+        crc2.closePath();
+        crc2.beginPath();
+        crc2.ellipse(150, -40, 5, 15, Math.PI, 0, 2 * Math.PI);
+        crc2.closePath();
+        crc2.fillStyle = "white";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.ellipse(72, -35, 8, 20, Math.PI, 0, 2 * Math.PI);
+        crc2.fillStyle = "white";
         crc2.fill();
         crc2.closePath();
         crc2.restore();
@@ -234,30 +246,10 @@ var FlyingPeopleAlps;
         crc2.closePath();
         crc2.restore();
     }
-    const circle = function (_position, x, _position, y, radius, fillCircle) {
-        crc2.beginPath();
-        crc2.arc(x, y, radius, 0, Math.PI * 2, false);
-        if (fillCircle) {
-            crc2.fill();
-        }
-        else {
-            crc2.stroke();
-        }
-    };
-    function drawBee(x, y) {
+    function drawBee(_position) {
         crc2.lineWidth = 2;
         crc2.strokeStyle = "black";
         crc2.fillStyle = "#ffff80";
-        circle(x, y, 8, true);
-        circle(x, y, 8, false);
-        circle(x - 5, y - 11, 5, false);
-        circle(x + 5, y - 11, 5, false);
-        circle(x - 2, y - 1, 2, false);
-        circle(x + 2, y - 1, 2, false);
-    }
-    ;
-    function flying() {
-        crc2.beginPath();
     }
     ;
 })(FlyingPeopleAlps || (FlyingPeopleAlps = {}));
