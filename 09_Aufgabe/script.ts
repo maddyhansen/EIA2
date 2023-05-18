@@ -5,9 +5,6 @@ namespace OldMcDonald {
   export let crc2: CanvasRenderingContext2D;
   let canvas: HTMLCanvasElement;
 
-  let donkey: Animal;
-
-
   function start(_event: Event): void {
     let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
     let crc2: CanvasRenderingContext2D;

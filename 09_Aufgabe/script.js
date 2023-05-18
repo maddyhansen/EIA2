@@ -4,7 +4,6 @@ var OldMcDonald;
     /*normal script*/
     window.addEventListener("load", start);
     let canvas;
-    let donkey;
     function start(_event) {
         let canvas = document.querySelector("canvas");
         let crc2;
