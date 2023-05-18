@@ -3,14 +3,19 @@ namespace OldMcDonald {
   /*normal script*/
   window.addEventListener("load", start);
   export let crc2: CanvasRenderingContext2D;
+  let canvas: HTMLCanvasElement;
 
-  let donkey: Animal; 
+  let donkey: Animal;
 
-  function start (_event:Event): void {
+
+  function start(_event: Event): void {
     let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
     let crc2: CanvasRenderingContext2D;
 
-    donkey = new Animal(70, "grey")
-    donkey.draw()
+    let donkey : Animal = new Animal(70, "grey")
+    console.log(donkey)
+    donkey.draw();
+
   }
+
 }

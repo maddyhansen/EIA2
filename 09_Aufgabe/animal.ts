@@ -12,9 +12,13 @@ namespace OldMcDonald {
         }
 
         draw(): void {
-            crc2.fillStyle = this.color;
-            crc2.fillRect(this.x, 100, 100, this.size);
+            crc2.fillStyle = "black";
+            crc2.fillRect(100, 100, 100, 50);
         }
+
+        sing(): void {};
+
+        eat(): void {};
     }
 
 }
