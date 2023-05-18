@@ -33,7 +33,18 @@ namespace FlyingPeopleAlps {
         drawTree1({ x: 400, y: 190 });
         drawTree2({ x: 440, y: 190 });
         drawTree3({ x: 360, y: 190 });
-        drawBee({ x: 360, y: 190 });
+        drawTree4({ x: 330, y: 190 });
+        drawBee({ x: 400, y: 500 });
+        drawBee2({ x: 300, y: 200 });
+        flyingPerson({ x: 800, y: 300 }, { x: -400, y: 250 });
+        flyingPerson1({ x: 50, y: 400 }, { x: -400, y: 250 });
+        flyingPerson2({ x: 650, y: 100 }, { x: -400, y: 250 });
+        flyingPerson3({ x: 450, y: 150 }, { x: -400, y: 250 });
+        flyingPerson4({ x: 500, y: 200 }, { x: -400, y: 250 });
+        Person({ x: 520, y: 320 }, { x: -400, y: 250 });
+        Person1({ x: 700, y: 550 }, { x: -400, y: 250 });
+        Person2({ x: 720, y: 560 }, { x: -400, y: 250 });
+        Person3({ x: 730, y: 550 }, { x: -400, y: 250 });
         console.log(horizon)
     }
 
@@ -52,7 +63,7 @@ namespace FlyingPeopleAlps {
 
     function drawMountains(_position: Vector): void {
 
-        let gradient: CanvasGradient = crc2.createLinearGradient(100,50,100,250);
+        let gradient: CanvasGradient = crc2.createLinearGradient(100, 50, 100, 250);
         gradient.addColorStop(0, "lightgray");
         gradient.addColorStop(1, "gray");
 
@@ -144,7 +155,7 @@ namespace FlyingPeopleAlps {
         crc2.translate(_position.x, _position.y);
         crc2.beginPath();
         crc2.moveTo(0, 0);
-        crc2.lineTo(600, 0);
+        crc2.lineTo(900, 0);
         crc2.lineTo(0, -300);
         crc2.closePath();
         crc2.fillStyle = "darkgrey";
@@ -193,8 +204,8 @@ namespace FlyingPeopleAlps {
     function drawWindSock(_position: Vector): void {
         console.log("Windsock", _position.x, _position.y);
         crc2.save();
-        crc2.translate( _position.x, _position.y);
-        
+        crc2.translate(_position.x, _position.y);
+
         crc2.beginPath();
         crc2.rect(70, -20, 5, 50);
         crc2.closePath();
@@ -210,13 +221,13 @@ namespace FlyingPeopleAlps {
         crc2.closePath();
 
         crc2.beginPath();
-        crc2.ellipse(150, -40, 5, 15, Math.PI, 0, 2* Math.PI);
+        crc2.ellipse(150, -40, 5, 15, Math.PI, 0, 2 * Math.PI);
         crc2.closePath();
         crc2.fillStyle = "white";
         crc2.fill();
 
         crc2.beginPath();
-        crc2.ellipse(72, -35, 8, 20, Math.PI, 0, 2* Math.PI);
+        crc2.ellipse(72, -35, 8, 20, Math.PI, 0, 2 * Math.PI);
         crc2.fillStyle = "white";
         crc2.fill();
         crc2.closePath();
@@ -297,15 +308,237 @@ namespace FlyingPeopleAlps {
     }
 
 
+    function drawTree4(_position: Vector): void {
+        console.log("Tree");
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+
+        crc2.beginPath();
+        crc2.fillStyle = "HSLA(14, 56%, 23%, 1)";
+        crc2.fillRect(_position.x, _position.y, 20, 70);
+        crc2.closePath();
+
+        crc2.beginPath();
+        crc2.arc(_position.x + 7, _position.y - 30, 60, 0, 2 * Math.PI);
+        crc2.fillStyle = "HSLA(84, 78%, 51%, 1)";
+        crc2.fill();
+        crc2.closePath();
+        crc2.restore();
+    }
+
     function drawBee(_position: Vector): void {
-        crc2.lineWidth = 2;
-        crc2.strokeStyle = "black";
-        crc2.fillStyle = "#ffff80";
-      
-  
-      }; 
+        console.log("Bee1");
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+
+        let grd = crc2.createLinearGradient(2, 3, 6, 8);
+        grd.addColorStop(0, "yellow");
+        grd.addColorStop(1, "black");
+        grd.addColorStop(1, "yellow");
+
+        crc2.beginPath();
+        crc2.ellipse(-2, -10, 8, 2, 80, -2, 2 * Math.PI);
+        crc2.fillStyle = "white";
+        crc2.fill();
+
+        crc2.beginPath();
+        crc2.ellipse(0, 0, 5, 10, Math.PI / 2, 0, 2 * Math.PI);
+        crc2.fillStyle = grd;
+        crc2.fill();
+
+        crc2.beginPath();
+        crc2.ellipse(2, -9, 8, 2, -80, 20, 2 * Math.PI);
+        crc2.fillStyle = "lightgrey";
+        crc2.fill();
+
+        crc2.restore();
+    }
+
+    function drawBee2(_position: Vector): void {
+        console.log("Bee1");
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+
+        let grd = crc2.createLinearGradient(2, 3, 6, 8);
+        grd.addColorStop(0, "yellow");
+        grd.addColorStop(1, "black");
+        grd.addColorStop(1, "yellow");
+
+        crc2.beginPath();
+        crc2.ellipse(-2, -10, 8, 2, 80, -2, 2 * Math.PI);
+        crc2.fillStyle = "white";
+        crc2.fill();
+
+        crc2.beginPath();
+        crc2.ellipse(0, 0, 5, 10, Math.PI / 2, 0, 2 * Math.PI);
+        crc2.fillStyle = grd;
+        crc2.fill();
+
+        crc2.beginPath();
+        crc2.ellipse(2, -9, 8, 2, -80, 20, 2 * Math.PI);
+        crc2.fillStyle = "lightgrey";
+        crc2.fill();
+
+        crc2.restore();
+    }
+
+    function flyingPerson(_position: Vector, _size: Vector) {
+
+
+        crc2.beginPath();
+        crc2.fillStyle = "#003300";
+        crc2.fillRect(_position.x, _position.y, 10, 16);
+        crc2.fillStyle = "#ffffcc";
+        crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+        crc2.closePath();
+
+        crc2.beginPath();
+        crc2.moveTo(_position.x, _position.y);
+        crc2.lineTo(_position.x - 20, _position.y - 20);
+        crc2.lineTo(_position.x + 30, _position.y - 30);
+        crc2.stroke();
+        crc2.fillStyle = "#b30000";
+        crc2.fill();
+        crc2.closePath();
+
+
+    };
+
+    function flyingPerson1(_position: Vector, _size: Vector) {
+
+
+        crc2.beginPath();
+        crc2.fillStyle = "#003300";
+        crc2.fillRect(_position.x, _position.y, 10, 16);
+        crc2.fillStyle = "#ffffcc";
+        crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+        crc2.closePath();
+
+        crc2.beginPath();
+        crc2.moveTo(_position.x, _position.y);
+        crc2.lineTo(_position.x - 20, _position.y - 20);
+        crc2.lineTo(_position.x + 30, _position.y - 30);
+        crc2.stroke();
+        crc2.fillStyle = "hsla(218, 78%, 51%, 1)";
+        crc2.fill();
+        crc2.closePath();
+
+
+    };
+
+    function flyingPerson2(_position: Vector, _size: Vector) {
+
+
+        crc2.beginPath();
+        crc2.fillStyle = "hsla(360, 78%, 51%, 1)";
+        crc2.fillRect(_position.x, _position.y, 10, 16);
+        crc2.fillStyle = "#ffffcc";
+        crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+        crc2.closePath();
+
+        crc2.beginPath();
+        crc2.moveTo(_position.x, _position.y);
+        crc2.lineTo(_position.x - 20, _position.y - 20);
+        crc2.lineTo(_position.x + 30, _position.y - 30);
+        crc2.stroke();
+        crc2.fillStyle = "hsla(270, 78%, 51%, 1)";
+        crc2.fill();
+        crc2.closePath();
+
+
+    };
+
+    function flyingPerson3(_position: Vector, _size: Vector) {
+
+
+        crc2.beginPath();
+        crc2.fillStyle = "hsla(329, 78%, 78%, 1)";
+        crc2.fillRect(_position.x, _position.y, 10, 16);
+        crc2.fillStyle = "#ffffcc";
+        crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+        crc2.closePath();
+
+        crc2.beginPath();
+        crc2.moveTo(_position.x, _position.y);
+        crc2.lineTo(_position.x - 20, _position.y - 20);
+        crc2.lineTo(_position.x + 30, _position.y - 30);
+        crc2.stroke();
+        crc2.fillStyle = "hsla(329, 78%, 78%, 1";
+        crc2.fill();
+        crc2.closePath();
+
+
+    };
+
+    
+    function flyingPerson4(_position: Vector, _size: Vector) {
+
+
+        crc2.beginPath();
+        crc2.fillStyle = "hsla(248, 78%, 78%, 1)";
+        crc2.fillRect(_position.x, _position.y, 10, 16);
+        crc2.fillStyle = "#ffffcc";
+        crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+        crc2.closePath();
+
+        crc2.beginPath();
+        crc2.moveTo(_position.x, _position.y);
+        crc2.lineTo(_position.x - 20, _position.y - 20);
+        crc2.lineTo(_position.x + 30, _position.y - 30);
+        crc2.stroke();
+        crc2.fillStyle = "hsla(248, 78%, 78%, 1)";
+        crc2.fill();
+        crc2.closePath();
+
+
+    };
+
+
+    function Person(_position: Vector, _size: Vector) {
+
+        crc2.beginPath();
+        crc2.fillStyle = "#003300";
+        crc2.fillRect(_position.x, _position.y, 10, 16);
+
+        crc2.fillStyle = "#ffffcc";
+        crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+        crc2.closePath();
+    }
 
 
 
+    function Person1(_position: Vector, _size: Vector) {
 
+        crc2.beginPath();
+        crc2.fillStyle = "hsla(248, 78%, 11%, 1)";
+        crc2.fillRect(_position.x, _position.y, 10, 16);
+
+        crc2.fillStyle = "#ffffcc";
+        crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+        crc2.closePath();
+
+    }
+
+    function Person2(_position: Vector, _size: Vector) {
+        crc2.beginPath();
+        crc2.fillStyle = "hsla(360, 78%, 11%, 1)";
+        crc2.fillRect(_position.x, _position.y, 10, 16);
+
+        crc2.fillStyle = "#ffffcc";
+        crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+        crc2.closePath();
+
+    }
+
+    function Person3(_position: Vector, _size: Vector) {
+        crc2.beginPath();
+        crc2.fillStyle = "HSLA(14, 56%, 23%, 1)";
+        crc2.fillRect(_position.x, _position.y, 10, 16);
+
+        crc2.fillStyle = "#ffffcc";
+        crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+
+        crc2.closePath();
+
+    }
 }
