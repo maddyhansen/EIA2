@@ -1,6 +1,8 @@
 "use strict";
 var FlyingPeopleAlps;
 (function (FlyingPeopleAlps) {
+    /*Im Aktivitätsdiagramm habe ich nur jeweils einmal den drawTree, drawBee, drawflyingperson and drawPerson gezeigt, da sie prinzipiell dieselben Funktionen sind
+    nur andere Farben, hoffe das ist okay!*/
     console.log("Its me, hi I am the problem its me!");
     window.addEventListener('load', handleload);
     let crc2;
@@ -29,15 +31,15 @@ var FlyingPeopleAlps;
         drawTree4({ x: 330, y: 190 });
         drawBee({ x: 400, y: 500 });
         drawBee2({ x: 300, y: 200 });
-        flyingPerson({ x: 800, y: 300 }, { x: -400, y: 250 });
-        flyingPerson1({ x: 50, y: 400 }, { x: -400, y: 250 });
-        flyingPerson2({ x: 650, y: 100 }, { x: -400, y: 250 });
-        flyingPerson3({ x: 450, y: 150 }, { x: -400, y: 250 });
-        flyingPerson4({ x: 500, y: 200 }, { x: -400, y: 250 });
-        Person({ x: 520, y: 320 }, { x: -400, y: 250 });
-        Person1({ x: 700, y: 550 }, { x: -400, y: 250 });
-        Person2({ x: 720, y: 560 }, { x: -400, y: 250 });
-        Person3({ x: 730, y: 550 }, { x: -400, y: 250 });
+        drawflyingPerson({ x: 800, y: 300 }, { x: -400, y: 250 });
+        drawflyingPerson1({ x: 50, y: 400 }, { x: -400, y: 250 });
+        drawflyingPerson2({ x: 650, y: 100 }, { x: -400, y: 250 });
+        drawflyingPerson3({ x: 450, y: 150 }, { x: -400, y: 250 });
+        drawflyingPerson4({ x: 500, y: 200 }, { x: -400, y: 250 });
+        drawPerson({ x: 520, y: 320 }, { x: -400, y: 250 });
+        drawPerson1({ x: 700, y: 550 }, { x: -400, y: 250 });
+        drawPerson2({ x: 720, y: 560 }, { x: -400, y: 250 });
+        drawPerson3({ x: 730, y: 550 }, { x: -400, y: 250 });
         console.log(horizon);
     }
     function drawBackground() {
@@ -170,7 +172,7 @@ var FlyingPeopleAlps;
         crc2.restore();
     }
     function drawWindSock(_position) {
-        console.log("Windsock", _position.x, _position.y);
+        console.log("Windsock");
         crc2.save();
         crc2.translate(_position.x, _position.y);
         crc2.beginPath();
@@ -316,7 +318,7 @@ var FlyingPeopleAlps;
         crc2.fill();
         crc2.restore();
     }
-    function flyingPerson(_position, _size) {
+    function drawflyingPerson(_position, _size) {
         crc2.beginPath();
         crc2.fillStyle = "#003300";
         crc2.fillRect(_position.x, _position.y, 10, 16);
@@ -333,7 +335,7 @@ var FlyingPeopleAlps;
         crc2.closePath();
     }
     ;
-    function flyingPerson1(_position, _size) {
+    function drawflyingPerson1(_position, _size) {
         crc2.beginPath();
         crc2.fillStyle = "#003300";
         crc2.fillRect(_position.x, _position.y, 10, 16);
@@ -350,7 +352,7 @@ var FlyingPeopleAlps;
         crc2.closePath();
     }
     ;
-    function flyingPerson2(_position, _size) {
+    function drawflyingPerson2(_position, _size) {
         crc2.beginPath();
         crc2.fillStyle = "hsla(360, 78%, 51%, 1)";
         crc2.fillRect(_position.x, _position.y, 10, 16);
@@ -367,7 +369,7 @@ var FlyingPeopleAlps;
         crc2.closePath();
     }
     ;
-    function flyingPerson3(_position, _size) {
+    function drawflyingPerson3(_position, _size) {
         crc2.beginPath();
         crc2.fillStyle = "hsla(329, 78%, 78%, 1)";
         crc2.fillRect(_position.x, _position.y, 10, 16);
@@ -384,7 +386,7 @@ var FlyingPeopleAlps;
         crc2.closePath();
     }
     ;
-    function flyingPerson4(_position, _size) {
+    function drawflyingPerson4(_position, _size) {
         crc2.beginPath();
         crc2.fillStyle = "hsla(248, 78%, 78%, 1)";
         crc2.fillRect(_position.x, _position.y, 10, 16);
@@ -401,7 +403,7 @@ var FlyingPeopleAlps;
         crc2.closePath();
     }
     ;
-    function Person(_position, _size) {
+    function drawPerson(_position, _size) {
         crc2.beginPath();
         crc2.fillStyle = "#003300";
         crc2.fillRect(_position.x, _position.y, 10, 16);
@@ -409,7 +411,7 @@ var FlyingPeopleAlps;
         crc2.fillRect(_position.x, _position.y - 6, 10, 10);
         crc2.closePath();
     }
-    function Person1(_position, _size) {
+    function drawPerson1(_position, _size) {
         crc2.beginPath();
         crc2.fillStyle = "hsla(248, 78%, 11%, 1)";
         crc2.fillRect(_position.x, _position.y, 10, 16);
@@ -417,7 +419,7 @@ var FlyingPeopleAlps;
         crc2.fillRect(_position.x, _position.y - 6, 10, 10);
         crc2.closePath();
     }
-    function Person2(_position, _size) {
+    function drawPerson2(_position, _size) {
         crc2.beginPath();
         crc2.fillStyle = "hsla(360, 78%, 11%, 1)";
         crc2.fillRect(_position.x, _position.y, 10, 16);
@@ -425,7 +427,7 @@ var FlyingPeopleAlps;
         crc2.fillRect(_position.x, _position.y - 6, 10, 10);
         crc2.closePath();
     }
-    function Person3(_position, _size) {
+    function drawPerson3(_position, _size) {
         crc2.beginPath();
         crc2.fillStyle = "HSLA(14, 56%, 23%, 1)";
         crc2.fillRect(_position.x, _position.y, 10, 16);
