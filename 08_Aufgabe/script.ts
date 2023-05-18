@@ -1,4 +1,4 @@
-namespace Canvas {
+/*namespace Canvas {
 
     console.log("Its me, hi I am the problem its me!")
 
@@ -152,7 +152,7 @@ namespace Canvas {
         pattern.stroke();
 
         return pattern;
-    }*/
+    }
 
     function drawParticle(_position: Vector, _size: Vector): void {
         let nParticles: number = 10;
@@ -177,4 +177,4 @@ namespace Canvas {
         }
 
     }
-}
+}*/
