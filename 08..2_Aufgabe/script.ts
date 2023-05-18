@@ -56,7 +56,7 @@ namespace FlyingPeopleAlps {
 
         let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
         gradient.addColorStop(0, "HSLA(198, 78%, 42%, 1)");
-        gradient.addColorStop(goldy, "white");
+        gradient.addColorStop(goldy, "lightgreen");
         gradient.addColorStop(1, "HSL(100,80%,30%)");
         console.log(gradient)
         crc2.fillStyle = gradient;
