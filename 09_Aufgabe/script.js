@@ -6,7 +6,7 @@ var OldMcDonald;
     let canvas;
     function start(_event) {
         let canvas = document.querySelector("canvas");
-        let crc2;
+        crc2: CanvasRenderingContext2D;
         let donkey = new OldMcDonald.Animal(70, "grey");
         console.log(donkey);
         donkey.draw();
