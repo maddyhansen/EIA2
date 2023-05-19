@@ -12,12 +12,19 @@ var OldMcDonald;
             this.size = _size;
         }
         draw() {
-            OldMcDonald.crc2.fillStyle = "black";
-            OldMcDonald.crc2.fillRect(100, 100, 100, 50);
+            OldMcDonald.crc2.fillStyle = "#8a8a8a";
+            OldMcDonald.crc2.fillRect(100, 100, 55, 50);
+            OldMcDonald.crc2.fillStyle = "#9c9b9a";
+            OldMcDonald.crc2.fillRect(100, 150, 75, 70);
         }
         sing() { }
         ;
-        eat() { }
+        eat() {
+            let fullstorage = 10;
+            if (fullstorage < 0) {
+                console.log('x is less than y');
+            }
+        }
         ;
     }
     OldMcDonald.Animal = Animal;
