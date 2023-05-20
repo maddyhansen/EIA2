@@ -8,11 +8,12 @@ namespace OldMcDonald {
   function handleload(_event: Event): void {
     let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
     crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
-
     drawBackground();
     drawWall();
     drawDonkey();
     drawPig();
+    food()
+    singing()
 
     /*let donkey: Animal = new Animal(70, "grey")
     console.log(donkey)
@@ -75,6 +76,14 @@ namespace OldMcDonald {
    // pig.drawEyes();
    // pig.drawNose();
    // pig.drawEars();
+  }
+
+  function singing(){
+    console.log("Hallo")
+  }
+
+  function food(){
+    console.log("Hallo")
   }
 
 
