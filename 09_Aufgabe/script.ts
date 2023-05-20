@@ -12,7 +12,7 @@ namespace OldMcDonald {
     drawBackground();
     drawWall();
     drawDonkey();
-    //drawPig();
+    drawPig();
 
     /*let donkey: Animal = new Animal(70, "grey")
     console.log(donkey)
@@ -53,9 +53,9 @@ namespace OldMcDonald {
   }
 
   function drawDonkey() {
-    let donkey: Animal = new Animal(70, "grey")
+    let donkey: Animal = new Animal("Donkey", "EHHHHHAHHHHH", "OLD MC DONALD HAD A FARM!", "HEU", 10)
     console.log(donkey)
-    donkey.draw();
+    //donkey.draw();
     donkey.sound();
     console.log(donkey.sound())
     //donkey.drawBody();
@@ -65,15 +65,17 @@ namespace OldMcDonald {
     //donkey.drawEars();
   }
 
-  /*function drawPig() {
-    let pig: Animal = new Animal(70, "grey")
+  function drawPig() {
+    let pig: Animal = new Animal()
     console.log(pig)
-    pig.drawBody();
-    pig.drawHead();
-    pig.drawEyes();
-    pig.drawNose();
-    pig.drawEars();
-  }*/
+    //pig.draw();
+    pig.sound();
+   // pig.drawBody();
+   // pig.drawHead();
+   // pig.drawEyes();
+   // pig.drawNose();
+   // pig.drawEars();
+  }
 
 
 }

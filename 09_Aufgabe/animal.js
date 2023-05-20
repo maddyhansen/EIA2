@@ -112,6 +112,8 @@ var OldMcDonald;
         sing() {
             let song = "OLD MC DONALD HAD A FARM!";
             let sing = song;
+            if (Animal)
+                ;
         }
         ;
         sound() {

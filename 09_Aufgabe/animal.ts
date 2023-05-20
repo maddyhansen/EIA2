@@ -5,13 +5,41 @@ namespace OldMcDonald {
         color: string = "black";
         x: number = 0;
 
-        constructor(_size: number, _color: string) {
+        constructor(_name: string, _sound: string, _sing: string, _eat: string, _food: number) {
             console.log("Hallo")
-            this.color = _color;
-            this.size = _size
+            this.name = _name;
+            this.sound = _sound;
+            this.sing = _sing;
+            this.eat = _eat;
+            this.food = _food;
         }
+    sing(): void {
+            let song: string = "OLD MC DONALD HAD A FARM!";
+            let sing: string = song;
 
-        draw(): void {
+        };
+
+        sound(): void {
+            let sound: string = "EHHHHAHHHHH";
+            console.log(sound)
+            let sound1: string = "MUHHHHHHH";
+            console.log(sound1)
+            let sound2: string = "BOOOCKBOOOCK";
+            console.log(sound2)
+            let sound3: string = "WUFFWUFF";
+            console.log(sound3)
+            let sound4: string = "OINKOINK";
+            console.log(sound4)
+        };
+
+        eat(_stockReamins:number): void {
+            let fullstorage: number = 10;
+            /* if (fullstorage < 0, fullstorage-- ) {
+                 console.log('x is less than y');
+             }*/
+
+
+        /*draw(): void {
             crc2.fillStyle = this.color;
             crc2.fillRect(this.x, 250, 55, this.size);
 
@@ -55,7 +83,7 @@ namespace OldMcDonald {
             crc2.lineTo(890, 195);
             crc2.fill();
         }
-        /*drawBody(): void {
+        drawBody(): void {
             crc2.fillStyle = this.color;
             crc2.fillRect(this.x, 250, 55, this.size);
         }
@@ -119,23 +147,7 @@ namespace OldMcDonald {
         }*/
 
 
-        sing(): void { 
-            let song: string = "OLD MC DONALD HAD A FARM!";
-            let sing: string = song; 
-        };
-        sound(): void {
-            let sound: string = "EHHHHAHHHHH"
-            console.log(sound)
-            let sound1: string = "MUHHHHHHH"
-            let sound2: string = "BOOOCKBOOOCK"
-            let sound3: string = "WUFFWUFF"
-            let sound4: string = "OINKOINK"
-        };
-        eat(): void {
-            let fullstorage: number = 10;
-            /* if (fullstorage < 0, fullstorage-- ) {
-                 console.log('x is less than y');
-             }*/
+    
         };
     }
 }
