@@ -1,11 +1,11 @@
 namespace OldMcDonald {
 
   /*normal script*/
-  window.addEventListener("load", start);
+  window.addEventListener("load", handleload);
   export let crc2: CanvasRenderingContext2D;
   export let canvas: HTMLCanvasElement;
 
-  function start(_event: Event): void {
+  function handleload(_event: Event): void {
     let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
     crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
