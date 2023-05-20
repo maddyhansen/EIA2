@@ -1,58 +1,51 @@
 namespace OldMcDonald {
-    /*Klassen*/
+    /*Klassen und Interface*/
     export class Animal {
         name: string;
-        sound: string = "EHHAHH";
+        sound: string;
         sing: string;
         eat: string;
         food: number;
 
         constructor(_name: string, _sound: string, _sing: string, _eat: string, _food: number) {
-            console.log("Hallo")
+            console.log("constructor")
             this.name = _name;
             this.sound = _sound;
             this.sing = _sing;
             this.eat = _eat;
             this.food = _food;
         }
-        singingSong(): void {
+        async singingSong() {
             let song: string = "OLD MC DONALD HAD A FARM!";
             let sing: string = song;
             console.log(sing)
-
         };
 
-        soundAnimal(): void {
-            let sound: string = "EHHHHAHHHHH";
-            console.log(sound)
-            let sound1: string = "MUHHHHHHH";
-            console.log(sound1)
-            let sound2: string = "BOOOCKBOOOCK";
-            console.log(sound2)
-            let sound3: string = "WUFFWUFF";
-            console.log(sound3)
-            let sound4: string = "OINKOINK";
-            console.log(sound4)
+        soundAnimal(_sound: string): void {
+            this.sound = "_sound";
         };
 
-       eatFood(_stockReamins: number): void {
-            let fullstorage: number = 10;
+
+        eatFood(_stockReamins: number): void {
+            fullstorage
             console.log(fullstorage)
-            /* if (fullstorage < 0, fullstorage-- ) {
-                 console.log('x is less than y');*/
-             }
-             
-             /*draw(_name:string): void {
-                if (_name: "donkey");
-                
-                if (_name: "pig");
-                if (_name: "cow");
-                if (_name: "chicken");
-                if (_name: "dog");
+        }
+    };
 
-             }*/
-
-
-
-        };
+    export interface Food {
+        grass: number;
+        corn: number;
+        hay: number;
+        meat: number;
+        junk: number;
     }
+
+    export let fullstorage: Food = {
+        grass: 700,
+        corn: 300,
+        hay: 600,
+        meat: 200,
+        junk: 300,
+    };
+
+}

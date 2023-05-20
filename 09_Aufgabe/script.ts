@@ -5,15 +5,16 @@ namespace OldMcDonald {
   export let crc2: CanvasRenderingContext2D;
   export let canvas: HTMLCanvasElement;
 
+  let animals: Animal[] = [];
+
   function handleload(_event: Event): void {
     let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
     crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
     document.getElementById("button")!.addEventListener('click', newDay);
     drawBackground();
     drawWall();
-    food()
-    singing()
-
+    //food()
+    //singing()
   }
 
   function drawBackground(): void {
@@ -27,12 +28,12 @@ namespace OldMcDonald {
 
   };
   function drawWall(): void {
-    crc2.fillStyle = "#262626";
+    crc2.fillStyle = "HSLA(137, 74%, 33%, 1)";
     crc2.fillRect(0, 290, crc2.canvas.width, 250);
   }
 
   function newDay(): void {
-    console.log("Hallo0")
+    console.log("newDay")
     donkey();
     pig();
     dog();
@@ -41,16 +42,16 @@ namespace OldMcDonald {
   }
 
   function donkey() {
-    console.log("Hallo0")
+    console.log("donkey")
     let donkey: Animal = new Animal("Donkey", "EHHHHHAHHHHH", "OLD MC DONALD HAD A FARM!", "HEU", 10)
     console.log(donkey)
-    donkey.name = "_name";
-    donkey.sound = "_sound";
-    donkey.sing = "_sing";
-    donkey.eat = "_eat";
+    donkey.name = "";
+    donkey.sound = "";
+    donkey.sing = "";
+    donkey.eat = "";
     donkey.food = 10;
-    donkey.soundAnimal();
-    console.log(donkey.soundAnimal())
+    donkey.soundAnimal("EHHHHHAHHHHH");
+    console.log(donkey.sound)
 
     donkey.singingSong();
     donkey.eatFood(10);
@@ -103,19 +104,22 @@ namespace OldMcDonald {
     crc2.lineTo(912, 195);
     crc2.lineTo(890, 195);
     crc2.fill();
+
+    animals.push(donkey)
+    console.log(animals)
   }
 
   function pig() {
-    console.log("Hallo0")
-    let pig: Animal = new Animal("Donkey", "EHHHHHAHHHHH", "OLD MC DONALD HAD A FARM!", "HEU", 10)
+    console.log("pig")
+    let pig: Animal = new Animal("Pig", "OINK OINK", "OLD MC DONALD HAD A FARM!", "Junk", 10)
     console.log(pig)
     pig.name = "_name";
     pig.sound = "_sound";
     pig.sing = "_sing";
     pig.eat = "_eat";
     pig.food = 10;
-    pig.soundAnimal();
-    //console.log(donkey.soundAnimal())
+    //pig.soundAnimal();
+    //console.log(pig.soundAnimal())
 
     pig.singingSong();
     pig.eatFood(10);
@@ -158,18 +162,20 @@ namespace OldMcDonald {
     crc2.lineTo(518, 195);
     crc2.lineTo(490, 195);
     crc2.fill();
+
+    animals.push(pig)
   }
 
   function chicken() {
-    console.log("Hallo0")
-    let chicken: Animal = new Animal("Donkey", "EHHHHHAHHHHH", "OLD MC DONALD HAD A FARM!", "HEU", 10)
+    console.log("chick")
+    let chicken: Animal = new Animal("Chicken", "BOOOCK BOOOOCK", "OLD MC DONALD HAD A FARM!", "KORN", 10)
     console.log(chicken)
     chicken.name = "_name";
     chicken.sound = "_sound";
     chicken.sing = "_sing";
     chicken.eat = "_eat";
     chicken.food = 10;
-    chicken.soundAnimal();
+    //chicken.soundAnimal();
 
     crc2.fillStyle = "#ffffff";
     crc2.fillRect(645, 250, 60, 50);
@@ -194,18 +200,18 @@ namespace OldMcDonald {
     crc2.lineTo(673, 260);
     crc2.fill();
 
+    animals.push(chicken)
   }
 
   function cow() {
-
-    let cow: Animal = new Animal("Donkey", "EHHHHHAHHHHH", "OLD MC DONALD HAD A FARM!", "HEU", 10)
-    console.log(cow)
+    console.log("cow")
+    let cow: Animal = new Animal("COW", "MUHHHHHHHH", "OLD MC DONALD HAD A FARM!", "GRAS", 10)
     cow.name = "_name";
     cow.sound = "_sound";
     cow.sing = "_sing";
     cow.eat = "_eat";
     cow.food = 10;
-    cow.soundAnimal();
+    //cow.soundAnimal();
     //console.log(cow.soundAnimal())
 
     crc2.fillStyle = "#e3dfdc";
@@ -255,18 +261,19 @@ namespace OldMcDonald {
     crc2.lineTo(330, 195);
     crc2.lineTo(290, 195);
     crc2.fill();
+
+    animals.push(cow)
   }
 
   function dog() {
-
-    let dog: Animal = new Animal("Donkey", "EHHHHHAHHHHH", "OLD MC DONALD HAD A FARM!", "HEU", 10)
-    console.log(dog)
+    console.log("dog")
+    let dog: Animal = new Animal("DOG", "WUFFF WIFFF", "OLD MC DONALD HAD A FARM!", "FLEISCH", 10)
     dog.name = "_name";
     dog.sound = "_sound";
     dog.sing = "_sing";
     dog.eat = "_eat";
     dog.food = 10;
-    dog.soundAnimal();
+    //dog.soundAnimal();
     //console.log(dog.soundAnimal())
 
 
@@ -295,15 +302,20 @@ namespace OldMcDonald {
 
     crc2.fillStyle = "#858585";
     crc2.fillRect(100, 188, 25, 15);
+
+    animals.push(dog)
   }
 
-  function singing() {
+ /* function singing() {
     console.log("Hallo1")
+    const para = document.createElement("p");
+    para.innerText = "This is a paragraph";
+    document.body.appendChild(para);
   }
 
   function food() {
     console.log("Hallo2")
-  }
+  }*/
 
 
 }

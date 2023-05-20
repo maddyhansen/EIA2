@@ -1,48 +1,44 @@
 "use strict";
 var OldMcDonald;
 (function (OldMcDonald) {
-    /*Klassen*/
+    /*Klassen und Interface*/
     class Animal {
         name;
-        sound = "EHHAHH";
+        sound;
         sing;
         eat;
         food;
         constructor(_name, _sound, _sing, _eat, _food) {
-            console.log("Hallo");
+            console.log("constructor");
             this.name = _name;
             this.sound = _sound;
             this.sing = _sing;
             this.eat = _eat;
             this.food = _food;
         }
-        singingSong() {
+        async singingSong() {
             let song = "OLD MC DONALD HAD A FARM!";
             let sing = song;
             console.log(sing);
         }
         ;
-        soundAnimal() {
-            let sound = "EHHHHAHHHHH";
-            console.log(sound);
-            let sound1 = "MUHHHHHHH";
-            console.log(sound1);
-            let sound2 = "BOOOCKBOOOCK";
-            console.log(sound2);
-            let sound3 = "WUFFWUFF";
-            console.log(sound3);
-            let sound4 = "OINKOINK";
-            console.log(sound4);
+        soundAnimal(_sound) {
+            this.sound = "_sound";
         }
         ;
         eatFood(_stockReamins) {
-            let fullstorage = 10;
-            console.log(fullstorage);
-            /* if (fullstorage < 0, fullstorage-- ) {
-                 console.log('x is less than y');*/
+            OldMcDonald.fullstorage;
+            console.log(OldMcDonald.fullstorage);
         }
     }
     OldMcDonald.Animal = Animal;
     ;
+    OldMcDonald.fullstorage = {
+        grass: 700,
+        corn: 300,
+        hay: 600,
+        meat: 200,
+        junk: 300,
+    };
 })(OldMcDonald || (OldMcDonald = {}));
 //# sourceMappingURL=animal.js.map
