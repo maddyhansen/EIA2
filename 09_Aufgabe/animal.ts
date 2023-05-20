@@ -15,13 +15,13 @@ namespace OldMcDonald {
             this.eat = _eat;
             this.food = _food;
         }
-        /*sing(): void {
+        singingSong(): void {
             let song: string = "OLD MC DONALD HAD A FARM!";
             let sing: string = song;
 
         };
 
-        /*sound(): void {
+        soundAnimal(): void {
             let sound: string = "EHHHHAHHHHH";
             console.log(sound)
             let sound1: string = "MUHHHHHHH";
@@ -32,9 +32,9 @@ namespace OldMcDonald {
             console.log(sound3)
             let sound4: string = "OINKOINK";
             console.log(sound4)
-        };*/
+        };
 
-       /* eat(_stockReamins: number): void {
+       eatFood(_stockReamins: number): void {
             let fullstorage: number = 10;
             /* if (fullstorage < 0, fullstorage-- ) {
                  console.log('x is less than y');
