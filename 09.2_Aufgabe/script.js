@@ -15,7 +15,7 @@ var FlyingPeopleAlpsII;
         console.log(FlyingPeopleAlpsII.goldy);
         FlyingPeopleAlpsII.drawBackground();
         FlyingPeopleAlpsII.drawMountains({ x: FlyingPeopleAlpsII.horizon, y: 70 });
-        FlyingPeopleAlpsII.drawSunny({ x: 100, y: 70 });
+        FlyingPeopleAlpsII.drawSunny(new FlyingPeopleAlpsII.Vector(100, 70));
         FlyingPeopleAlpsII.drawCloud({ x: 500, y: 175 }, { x: 250, y: 75 });
         FlyingPeopleAlpsII.drawTriangle({ x: 0, y: 440 });
         FlyingPeopleAlpsII.drawLandingCircle({ x: 400, y: 500 }, 190, 30);
@@ -26,25 +26,26 @@ var FlyingPeopleAlpsII;
         FlyingPeopleAlpsII.drawTree2({ x: 440, y: 190 });
         FlyingPeopleAlpsII.drawTree3({ x: 360, y: 190 });
         FlyingPeopleAlpsII.drawTree4({ x: 330, y: 190 });
+        FlyingPeopleAlpsII.imgData = FlyingPeopleAlpsII.crc2.getImageData(0, 0, FlyingPeopleAlpsII.crc2.canvas.width, FlyingPeopleAlpsII.crc2.canvas.height);
         console.log(FlyingPeopleAlpsII.horizon);
         animateFlyingPerson();
         createFlyingPerson();
     }
-    let paraglider = [];
-    FlyingPeopleAlpsII.landingzone = (_x, _y) => ;
-    FlyingPeopleAlpsII.hikingzone = (_x, _y) => ;
-    FlyingPeopleAlpsII.flystart = (_x, _y) => ;
+    let FlyingPerson = [];
+    FlyingPeopleAlpsII.landingzone = new FlyingPeopleAlpsII.Vector(400, 500);
+    FlyingPeopleAlpsII.hikingzone = new FlyingPeopleAlpsII.Vector(0, 440);
+    FlyingPeopleAlpsII.flystart = new FlyingPeopleAlpsII.Vector(50, 150);
     function createFlyingPerson() {
         for (let iFlyingPerson = 0; iFlyingPerson < 13; iFlyingPerson++) {
-            let paraglideri = new paraglider;
-            paraglider.push(paraglideri);
+            let paraglideri = new FlyingPeopleAlpsII.paraglider(new FlyingPeopleAlpsII.Vector(400, 500));
+            FlyingPerson.push(paraglideri);
         }
     }
     function animateFlyingPerson() {
-        FlyingPeopleAlpsII.crc2.putImageData(FlyingPeopleAlpsII.drawBackground, 0, 0);
-        for (let paraglideri of paraglider) {
-            paraglider.draw(FlyingPeopleAlpsII.Vector, FlyingPeopleAlpsII.Vector);
-            paraglider.move(1 / 1000);
+        FlyingPeopleAlpsII.crc2.putImageData(FlyingPeopleAlpsII.imgData, 0, 0);
+        for (let paraglideri of FlyingPerson) {
+            FlyingPeopleAlpsII.paraglider.draw(FlyingPeopleAlpsII.flystart);
+            FlyingPeopleAlpsII.paraglider.move(1 / 1000);
         }
     }
     /*  function drawBee(_position: Vector): void {
