@@ -1,17 +1,6 @@
-namespace FlyingPeopleAlps {
+namespace FlyingPeopleAlpsII {
 
-    /*Im Aktivitätsdiagramm habe ich nur jeweils einmal den drawTree, drawBee, drawflyingperson and drawPerson gezeigt, da sie prinzipiell dieselben Funktionen sind 
-    nur andere Farben, hoffe das ist okay!
-    
-    AD Verbesserung:
-    Auf der zweiten Seite unten in der Mitte und rechts hab ich die Namen der Funktion vergessen. Rechts ist DrawBee und links mittig ist Windsock :) */
-
-    console.log("Its me, hi I am the problem its me!")
-
-    interface Vector {
-        x: number;
-        y: number;
-    }
+   console.log("Its me, hi I am the problem its me!")
 
     window.addEventListener('load', handleload);
     let crc2: CanvasRenderingContext2D;

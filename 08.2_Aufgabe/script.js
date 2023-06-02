@@ -1,11 +1,6 @@
 "use strict";
-var FlyingPeopleAlps;
-(function (FlyingPeopleAlps) {
-    /*Im Aktivitätsdiagramm habe ich nur jeweils einmal den drawTree, drawBee, drawflyingperson and drawPerson gezeigt, da sie prinzipiell dieselben Funktionen sind
-    nur andere Farben, hoffe das ist okay!
-    
-    AD Verbesserung:
-    Auf der zweiten Seite unten in der Mitte und rechts hab ich die Namen der Funktion vergessen. Rechts ist DrawBee und links mittig ist Windsock :) */
+var FlyingPeopleAlpsII;
+(function (FlyingPeopleAlpsII) {
     console.log("Its me, hi I am the problem its me!");
     window.addEventListener('load', handleload);
     let crc2;
@@ -438,5 +433,5 @@ var FlyingPeopleAlps;
         crc2.fillRect(_position.x, _position.y - 6, 10, 10);
         crc2.closePath();
     }
-})(FlyingPeopleAlps || (FlyingPeopleAlps = {}));
+})(FlyingPeopleAlpsII || (FlyingPeopleAlpsII = {}));
 //# sourceMappingURL=script.js.map
