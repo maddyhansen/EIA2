@@ -9,8 +9,6 @@ namespace FlyingPeopleAlpsII {
             this.velocity = _velocity;
         }
 
-
-
         getRandomNumber(_max: number, _min: number = 0): number {
             return Math.floor(Math.random() * _max) + _min;
         }
@@ -80,6 +78,7 @@ namespace FlyingPeopleAlpsII {
 
             this.velocity
             this.position
+            
             if (flystart)
                 this.position.x += crc2.canvas.width;
             this.activity = "flying"
