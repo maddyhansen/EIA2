@@ -40,13 +40,13 @@ namespace FlyingPeopleAlpsII {
         }
 
     let FlyingPerson: paraglider[] = [];
-        export let landingzone: Vector = new Vector(400, 500);
+        export let landingzone: Vector = new Vector(400, 500); //Vector is not a constructor?
         export let hikingzone: Vector = new Vector(0, 440);
         export let flystart: Vector = new Vector(50, 150);
 
         function createFlyingPerson(): void {
 
-            for (let iFlyingPerson: number = 0; iFlyingPerson < 13; iFlyingPerson++) {
+            for (let iFlyingPerson: number = 0; iFlyingPerson < 10; iFlyingPerson++) {
                 let paraglideri: paraglider = new paraglider(new Vector(400, 500));
                 FlyingPerson.push(paraglideri);
             }
@@ -59,7 +59,7 @@ namespace FlyingPeopleAlpsII {
 
             for (let paraglideri of FlyingPerson) {
                 paraglideri.draw(new Vector(150, 150), new Vector(10,16));
-                paraglideri.move(1 / 90);
+                paraglideri.move(1 / 1000); //hiermit kommt er auch nicht klar
             }
 
         }

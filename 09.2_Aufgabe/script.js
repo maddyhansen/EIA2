@@ -33,11 +33,11 @@ var FlyingPeopleAlpsII;
         window.setInterval(animateFlyingPerson, 1000);
     }
     let FlyingPerson = [];
-    FlyingPeopleAlpsII.landingzone = new FlyingPeopleAlpsII.Vector(400, 500);
+    FlyingPeopleAlpsII.landingzone = new FlyingPeopleAlpsII.Vector(400, 500); //Vector is not a constructor?
     FlyingPeopleAlpsII.hikingzone = new FlyingPeopleAlpsII.Vector(0, 440);
     FlyingPeopleAlpsII.flystart = new FlyingPeopleAlpsII.Vector(50, 150);
     function createFlyingPerson() {
-        for (let iFlyingPerson = 0; iFlyingPerson < 13; iFlyingPerson++) {
+        for (let iFlyingPerson = 0; iFlyingPerson < 10; iFlyingPerson++) {
             let paraglideri = new FlyingPeopleAlpsII.paraglider(new FlyingPeopleAlpsII.Vector(400, 500));
             FlyingPerson.push(paraglideri);
         }
@@ -46,7 +46,7 @@ var FlyingPeopleAlpsII;
         FlyingPeopleAlpsII.crc2.putImageData(FlyingPeopleAlpsII.imgData, 0, 0);
         for (let paraglideri of FlyingPerson) {
             paraglideri.draw(new FlyingPeopleAlpsII.Vector(150, 150), new FlyingPeopleAlpsII.Vector(10, 16));
-            paraglideri.move(1 / 90);
+            paraglideri.move(1 / 1000); //hiermit kommt er auch nicht klar
         }
     }
     /*  function drawBee(_position: Vector): void {

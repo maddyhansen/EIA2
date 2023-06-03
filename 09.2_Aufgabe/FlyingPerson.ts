@@ -8,6 +8,7 @@ namespace FlyingPeopleAlpsII {
         constructor(_velocity: Vector) {
 
         this.velocity = new Vector(10, 0);
+        this.velocity.randomize(70, 70);
             this.velocity = _velocity;
         }
 
@@ -51,7 +52,7 @@ namespace FlyingPeopleAlpsII {
                 crc2.closePath();
             }
 
-            if (this.activity = "walking") {
+          /*  if (this.activity = "walking") {
                 //Kein Schirm
                 crc2.beginPath();
                 crc2.fillStyle = this.changeColor();
@@ -70,13 +71,13 @@ namespace FlyingPeopleAlpsII {
                 crc2.fillStyle = this.changeColor();
                 crc2.fillRect(_position.x, _position.y - 6, 10, 10);
                 crc2.closePath();
-            }
+            }*/
         };
 
         move(_timeslice: number): void {
             let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
-            this.position.add(offset);
+            this.position.add(offset); //kommt mit add nicht klar, wieso weiß ich nicht genau. Er ist in Vector deklariert.
 
             this.velocity
             this.position
@@ -84,9 +85,10 @@ namespace FlyingPeopleAlpsII {
             if (flystart) {
                 this.position.x += crc2.canvas.width;
                 this.activity = "flying"
+                this.draw(400, 10 )
             }
 
-            if (landingzone) {
+            /*if (landingzone) {
                 this.position.y += crc2.canvas.height;
             this.activity = "walking"
             }
@@ -94,7 +96,7 @@ namespace FlyingPeopleAlpsII {
             if (hikingzone){
                 this.position.x -= crc2.canvas.width;
                 this.activity = "climbing"
-            }
+            }*/
             
         }
 
