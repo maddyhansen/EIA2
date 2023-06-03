@@ -89,18 +89,20 @@ namespace FlyingPeopleAlpsII {
             this.activity = "flying";
 
             let y_ground: Vector = new Vector(200, 500);
+            let flyground: Vector = new Vector(150, 50);
+            let x_ground: Vector = new Vector(50, 10);
             if (flystart > y_ground) {//flystart
                 //this.draw(_y: 400, 10)
                 this.activity = "walking";
                 this.position.x += crc2.canvas.width;
             }
 
-            if (hikingzone) {
+            if (hikingzone > x_ground) {
                 this.position.x -= crc2.canvas.width;
                 this.activity = "climbing"
             }
 
-            if (flystart) {
+            if (flystart = flyground) {
                 this.position.y += crc2.canvas.height;
                 this.activity = "flying"
             }

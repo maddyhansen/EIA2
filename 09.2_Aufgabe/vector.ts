@@ -28,10 +28,7 @@ namespace FlyingPeopleAlpsII {
             this.x-=_sub.x;
             this.y-=_sub.y;
         }
-        subtract_climb(_sub:Vector):void{
-            // this.x-=_sub.x;
-            this.y-=_sub.y;
-        }
+    
 
         randomize(_minLength: number, _maxLength: number): void {
             let length: number = _minLength + Math.random() * (_maxLength - _minLength);

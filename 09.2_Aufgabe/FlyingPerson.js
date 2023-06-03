@@ -75,16 +75,18 @@ var FlyingPeopleAlpsII;
             //this.position
             this.activity = "flying";
             let y_ground = new FlyingPeopleAlpsII.Vector(200, 500);
+            let flyground = new FlyingPeopleAlpsII.Vector(150, 50);
+            let x_ground = new FlyingPeopleAlpsII.Vector(50, 10);
             if (FlyingPeopleAlpsII.flystart > y_ground) { //flystart
                 //this.draw(_y: 400, 10)
                 this.activity = "walking";
                 this.position.x += FlyingPeopleAlpsII.crc2.canvas.width;
             }
-            if (FlyingPeopleAlpsII.hikingzone) {
+            if (FlyingPeopleAlpsII.hikingzone > x_ground) {
                 this.position.x -= FlyingPeopleAlpsII.crc2.canvas.width;
                 this.activity = "climbing";
             }
-            if (FlyingPeopleAlpsII.flystart) {
+            if (FlyingPeopleAlpsII.flystart = flyground) {
                 this.position.y += FlyingPeopleAlpsII.crc2.canvas.height;
                 this.activity = "flying";
             }

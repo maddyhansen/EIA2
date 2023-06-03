@@ -9,6 +9,7 @@ namespace FlyingPeopleAlpsII {
     export let canvas: HTMLCanvasElement = document.querySelector("canvas")!;
     export let horizon1: Vector
     export let horizon: number
+
     function handleload(_event: Event) {
         let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
         if (!canvas)
@@ -37,7 +38,6 @@ namespace FlyingPeopleAlpsII {
 
         crc2.putImageData(imgData, 0, 0);
 
-        animateFlyingPerson()
         createFlyingPerson();
         window.setInterval(animateFlyingPerson, 1000) //As soon as I change the number the FlyingPerson vanishes. I think the Intervall is going through changeColor instead of going through move().... Dont know how to fix it
 
@@ -70,7 +70,6 @@ namespace FlyingPeopleAlpsII {
         for (let paraglideri of FlyingPerson) {
             paraglideri.move(1 / 50); //hiermit kommt er auch nicht klar
             paraglideri.draw(new Vector(150, 150), new Vector(10, 16));
-            window.setInterval(animateFlyingPerson, 10)
         }
 
     }

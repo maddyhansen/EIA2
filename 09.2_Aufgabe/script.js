@@ -29,7 +29,6 @@ var FlyingPeopleAlpsII;
         FlyingPeopleAlpsII.imgData = FlyingPeopleAlpsII.crc2.getImageData(0, 0, FlyingPeopleAlpsII.crc2.canvas.width, FlyingPeopleAlpsII.crc2.canvas.height);
         console.log(FlyingPeopleAlpsII.horizon);
         FlyingPeopleAlpsII.crc2.putImageData(FlyingPeopleAlpsII.imgData, 0, 0);
-        animateFlyingPerson();
         createFlyingPerson();
         window.setInterval(animateFlyingPerson, 1000); //As soon as I change the number the FlyingPerson vanishes. I think the Intervall is going through changeColor instead of going through move().... Dont know how to fix it
         createBumbleBee();
@@ -55,7 +54,6 @@ var FlyingPeopleAlpsII;
         for (let paraglideri of FlyingPerson) {
             paraglideri.move(1 / 50); //hiermit kommt er auch nicht klar
             paraglideri.draw(new FlyingPeopleAlpsII.Vector(150, 150), new FlyingPeopleAlpsII.Vector(10, 16));
-            window.setInterval(animateFlyingPerson, 10);
         }
     }
     function createBumbleBee() {
