@@ -78,7 +78,7 @@ namespace FlyingPeopleAlpsII {
 
             this.velocity
             this.position
-            
+
             if (flystart)
                 this.position.x += crc2.canvas.width;
             this.activity = "flying"
@@ -98,7 +98,6 @@ namespace FlyingPeopleAlpsII {
         walk(_position: Vector, _size: Vector) {
             this.activity = "walking";
             return this.activity;
-            //this.velocity = (0.0.0)
         }
 
         climb(_position: Vector, _size: Vector) {

@@ -21,9 +21,9 @@ namespace FlyingPeopleAlpsII {
         drawBackground();
         drawMountains(new Vector(horizon,70));
         drawSunny(new Vector(100, 70));
-        drawCloud(new Vector(500, 175)), new Vector(250, 75);
+        drawCloud(new Vector(500, 175), new Vector(250, 75));
         drawTriangle(new Vector(0, 400));
-        drawLandingCircle(new Vector(0, 400)), new Vector (190, 30);
+        drawLandingCircle(new Vector(0, 400) , new Vector (190, 30));
         drawShack(new Vector(700, 550));
         drawWindSock(new Vector (380,500));
         drawTree(new Vector (90, 190 ));
@@ -35,8 +35,8 @@ namespace FlyingPeopleAlpsII {
             console.log(horizon)
 
         animateFlyingPerson()
-        createFlyingPerson()
-
+        createFlyingPerson();
+        window.setInterval(animateFlyingPerson, 1000)
         }
 
     let FlyingPerson: paraglider[] = [];
@@ -58,8 +58,8 @@ namespace FlyingPeopleAlpsII {
             crc2.putImageData(imgData, 0, 0);
 
             for (let paraglideri of FlyingPerson) {
-                paraglider.draw(flystart);
-                paraglider.move(1 / 1000);
+                paraglideri.draw(new Vector(150, 150), new Vector(10,16));
+                paraglideri.move(1 / 90);
             }
 
         }

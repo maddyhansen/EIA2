@@ -16,9 +16,9 @@ var FlyingPeopleAlpsII;
         FlyingPeopleAlpsII.drawBackground();
         FlyingPeopleAlpsII.drawMountains(new FlyingPeopleAlpsII.Vector(FlyingPeopleAlpsII.horizon, 70));
         FlyingPeopleAlpsII.drawSunny(new FlyingPeopleAlpsII.Vector(100, 70));
-        FlyingPeopleAlpsII.drawCloud(new FlyingPeopleAlpsII.Vector(500, 175)), new FlyingPeopleAlpsII.Vector(250, 75);
+        FlyingPeopleAlpsII.drawCloud(new FlyingPeopleAlpsII.Vector(500, 175), new FlyingPeopleAlpsII.Vector(250, 75));
         FlyingPeopleAlpsII.drawTriangle(new FlyingPeopleAlpsII.Vector(0, 400));
-        FlyingPeopleAlpsII.drawLandingCircle(new FlyingPeopleAlpsII.Vector(0, 400)), new FlyingPeopleAlpsII.Vector(190, 30);
+        FlyingPeopleAlpsII.drawLandingCircle(new FlyingPeopleAlpsII.Vector(0, 400), new FlyingPeopleAlpsII.Vector(190, 30));
         FlyingPeopleAlpsII.drawShack(new FlyingPeopleAlpsII.Vector(700, 550));
         FlyingPeopleAlpsII.drawWindSock(new FlyingPeopleAlpsII.Vector(380, 500));
         FlyingPeopleAlpsII.drawTree(new FlyingPeopleAlpsII.Vector(90, 190));
@@ -30,6 +30,7 @@ var FlyingPeopleAlpsII;
         console.log(FlyingPeopleAlpsII.horizon);
         animateFlyingPerson();
         createFlyingPerson();
+        window.setInterval(animateFlyingPerson, 1000);
     }
     let FlyingPerson = [];
     FlyingPeopleAlpsII.landingzone = new FlyingPeopleAlpsII.Vector(400, 500);
@@ -44,8 +45,8 @@ var FlyingPeopleAlpsII;
     function animateFlyingPerson() {
         FlyingPeopleAlpsII.crc2.putImageData(FlyingPeopleAlpsII.imgData, 0, 0);
         for (let paraglideri of FlyingPerson) {
-            FlyingPeopleAlpsII.paraglider.draw(FlyingPeopleAlpsII.flystart);
-            FlyingPeopleAlpsII.paraglider.move(1 / 1000);
+            paraglideri.draw(new FlyingPeopleAlpsII.Vector(150, 150), new FlyingPeopleAlpsII.Vector(10, 16));
+            paraglideri.move(1 / 90);
         }
     }
     /*  function drawBee(_position: Vector): void {

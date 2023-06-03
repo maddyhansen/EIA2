@@ -85,7 +85,6 @@ var FlyingPeopleAlpsII;
         walk(_position, _size) {
             this.activity = "walking";
             return this.activity;
-            //this.velocity = (0.0.0)
         }
         climb(_position, _size) {
             this.activity = "climbing";
