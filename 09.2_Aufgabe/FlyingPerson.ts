@@ -5,11 +5,17 @@ namespace FlyingPeopleAlpsII {
         velocity: Vector;
         activity: string;
 
-        constructor(_velocity: Vector) {
+        constructor(_velocity: Vector, _position: Vector, _activity: string) {
 
-        this.velocity = new Vector(10, 0);
-        this.velocity.randomize(70, 70);
+            this.velocity = new Vector(50, 0);
+            this.velocity.randomize(120, 20);
             this.velocity = _velocity;
+
+            this.position = new Vector(150, 20);
+            this.position = _position;
+
+            this.activity = "flying";
+            this.activity = _activity;
         }
 
         getRandomNumber(_max: number, _min: number = 0): number {
@@ -26,7 +32,6 @@ namespace FlyingPeopleAlpsII {
             let randomColor6 = intensity[Math.floor(Math.random() * intensity.length)];
             const randomColor: string = `#${randomColor1}${randomColor2}${randomColor3}${randomColor4}${randomColor5}${randomColor6}`;
             crc2.fillStyle = "randomColor";
-            console.log(randomColor);
 
             return randomColor;
         }
@@ -52,7 +57,7 @@ namespace FlyingPeopleAlpsII {
                 crc2.closePath();
             }
 
-          /*  if (this.activity = "walking") {
+            if (this.activity = "walking") {
                 //Kein Schirm
                 crc2.beginPath();
                 crc2.fillStyle = this.changeColor();
@@ -71,7 +76,7 @@ namespace FlyingPeopleAlpsII {
                 crc2.fillStyle = this.changeColor();
                 crc2.fillRect(_position.x, _position.y - 6, 10, 10);
                 crc2.closePath();
-            }*/
+            }
         };
 
         move(_timeslice: number): void {
@@ -79,25 +84,27 @@ namespace FlyingPeopleAlpsII {
             offset.scale(_timeslice);
             this.position.add(offset); //kommt mit add nicht klar, wieso weiß ich nicht genau. Er ist in Vector deklariert.
 
-            this.velocity
-            this.position
+            //this.velocity
+            //this.position
+            this.activity = "flying";
 
-            if (flystart) {
+            let y_ground: Vector = new Vector(200, 500);
+            if (flystart > y_ground) {//flystart
+                //this.draw(_y: 400, 10)
+                this.activity = "walking";
                 this.position.x += crc2.canvas.width;
-                this.activity = "flying"
-                this.draw(400, 10 )
             }
 
-            /*if (landingzone) {
-                this.position.y += crc2.canvas.height;
-            this.activity = "walking"
-            }
-                
-            if (hikingzone){
+            if (hikingzone) {
                 this.position.x -= crc2.canvas.width;
                 this.activity = "climbing"
-            }*/
-            
+            }
+
+            if (flystart) {
+                this.position.y += crc2.canvas.height;
+                this.activity = "flying"
+            }
+
         }
 
         fly(_position: Vector, _size: Vector) {
@@ -108,6 +115,8 @@ namespace FlyingPeopleAlpsII {
         walk(_position: Vector, _size: Vector) {
             this.activity = "walking";
             return this.activity;
+
+            this.velocity = new Vector(10, 0) //???
         }
 
         climb(_position: Vector, _size: Vector) {
@@ -116,15 +125,4 @@ namespace FlyingPeopleAlpsII {
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
 }

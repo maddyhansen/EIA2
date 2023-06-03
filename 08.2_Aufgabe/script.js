@@ -1,6 +1,6 @@
 "use strict";
-var FlyingPeopleAlpsII;
-(function (FlyingPeopleAlpsII) {
+var FlyingPeopleAlps;
+(function (FlyingPeopleAlps) {
     console.log("Its me, hi I am the problem its me!");
     window.addEventListener('load', handleload);
     let crc2;
@@ -433,5 +433,5 @@ var FlyingPeopleAlpsII;
         crc2.fillRect(_position.x, _position.y - 6, 10, 10);
         crc2.closePath();
     }
-})(FlyingPeopleAlpsII || (FlyingPeopleAlpsII = {}));
+})(FlyingPeopleAlps || (FlyingPeopleAlps = {}));
 //# sourceMappingURL=script.js.map

@@ -5,10 +5,14 @@ var FlyingPeopleAlpsII;
         position;
         velocity;
         activity;
-        constructor(_velocity) {
-            this.velocity = new FlyingPeopleAlpsII.Vector(10, 0);
-            this.velocity.randomize(70, 70);
+        constructor(_velocity, _position, _activity) {
+            this.velocity = new FlyingPeopleAlpsII.Vector(50, 0);
+            this.velocity.randomize(120, 20);
             this.velocity = _velocity;
+            this.position = new FlyingPeopleAlpsII.Vector(150, 20);
+            this.position = _position;
+            this.activity = "flying";
+            this.activity = _activity;
         }
         getRandomNumber(_max, _min = 0) {
             return Math.floor(Math.random() * _max) + _min;
@@ -23,7 +27,6 @@ var FlyingPeopleAlpsII;
             let randomColor6 = intensity[Math.floor(Math.random() * intensity.length)];
             const randomColor = `#${randomColor1}${randomColor2}${randomColor3}${randomColor4}${randomColor5}${randomColor6}`;
             FlyingPeopleAlpsII.crc2.fillStyle = "randomColor";
-            console.log(randomColor);
             return randomColor;
         }
         draw(_position, _size) {
@@ -44,48 +47,47 @@ var FlyingPeopleAlpsII;
                 FlyingPeopleAlpsII.crc2.fill();
                 FlyingPeopleAlpsII.crc2.closePath();
             }
-            /*  if (this.activity = "walking") {
-                  //Kein Schirm
-                  crc2.beginPath();
-                  crc2.fillStyle = this.changeColor();
-                  crc2.fillRect(_position.x, _position.y, 10, 16);
-  
-                  crc2.fillStyle = this.changeColor();
-                  crc2.fillRect(_position.x, _position.y - 6, 10, 10);
-                  crc2.closePath();
-              }
-              if (this.activity = "climbing") {
-                  //KeinSchirm
-                  crc2.beginPath();
-                  crc2.fillStyle = this.changeColor();
-                  crc2.fillRect(_position.x, _position.y, 10, 16);
-  
-                  crc2.fillStyle = this.changeColor();
-                  crc2.fillRect(_position.x, _position.y - 6, 10, 10);
-                  crc2.closePath();
-              }*/
+            if (this.activity = "walking") {
+                //Kein Schirm
+                FlyingPeopleAlpsII.crc2.beginPath();
+                FlyingPeopleAlpsII.crc2.fillStyle = this.changeColor();
+                FlyingPeopleAlpsII.crc2.fillRect(_position.x, _position.y, 10, 16);
+                FlyingPeopleAlpsII.crc2.fillStyle = this.changeColor();
+                FlyingPeopleAlpsII.crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+                FlyingPeopleAlpsII.crc2.closePath();
+            }
+            if (this.activity = "climbing") {
+                //KeinSchirm
+                FlyingPeopleAlpsII.crc2.beginPath();
+                FlyingPeopleAlpsII.crc2.fillStyle = this.changeColor();
+                FlyingPeopleAlpsII.crc2.fillRect(_position.x, _position.y, 10, 16);
+                FlyingPeopleAlpsII.crc2.fillStyle = this.changeColor();
+                FlyingPeopleAlpsII.crc2.fillRect(_position.x, _position.y - 6, 10, 10);
+                FlyingPeopleAlpsII.crc2.closePath();
+            }
         }
         ;
         move(_timeslice) {
             let offset = new FlyingPeopleAlpsII.Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
             this.position.add(offset); //kommt mit add nicht klar, wieso weiß ich nicht genau. Er ist in Vector deklariert.
-            this.velocity;
-            this.position;
-            if (FlyingPeopleAlpsII.flystart) {
+            //this.velocity
+            //this.position
+            this.activity = "flying";
+            let y_ground = new FlyingPeopleAlpsII.Vector(200, 500);
+            if (FlyingPeopleAlpsII.flystart > y_ground) { //flystart
+                //this.draw(_y: 400, 10)
+                this.activity = "walking";
                 this.position.x += FlyingPeopleAlpsII.crc2.canvas.width;
+            }
+            if (FlyingPeopleAlpsII.hikingzone) {
+                this.position.x -= FlyingPeopleAlpsII.crc2.canvas.width;
+                this.activity = "climbing";
+            }
+            if (FlyingPeopleAlpsII.flystart) {
+                this.position.y += FlyingPeopleAlpsII.crc2.canvas.height;
                 this.activity = "flying";
-                this.draw(400, 10);
             }
-            /*if (landingzone) {
-                this.position.y += crc2.canvas.height;
-            this.activity = "walking"
-            }
-                
-            if (hikingzone){
-                this.position.x -= crc2.canvas.width;
-                this.activity = "climbing"
-            }*/
         }
         fly(_position, _size) {
             this.activity = "flying";
@@ -94,6 +96,7 @@ var FlyingPeopleAlpsII;
         walk(_position, _size) {
             this.activity = "walking";
             return this.activity;
+            this.velocity = new FlyingPeopleAlpsII.Vector(10, 0); //???
         }
         climb(_position, _size) {
             this.activity = "climbing";

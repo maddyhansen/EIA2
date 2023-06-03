@@ -1,7 +1,11 @@
-namespace FlyingPeopleAlpsII {
+namespace FlyingPeopleAlps {
 
    console.log("Its me, hi I am the problem its me!")
 
+   interface Vector {
+    x:number, 
+    y:number 
+   }
     window.addEventListener('load', handleload);
     let crc2: CanvasRenderingContext2D;
     let goldy: number = 0.62;

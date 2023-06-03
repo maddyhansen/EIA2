@@ -4,6 +4,8 @@ var FlyingPeopleAlpsII;
     class Vector {
         x;
         y;
+        _radiusX;
+        _radiusY;
         constructor(_x, _y) {
             this.set(_x, _y);
         }
