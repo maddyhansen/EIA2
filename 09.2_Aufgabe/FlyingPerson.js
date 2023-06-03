@@ -68,15 +68,18 @@ var FlyingPeopleAlpsII;
             this.position.add(offset);
             this.velocity;
             this.position;
-            if (FlyingPeopleAlpsII.flystart)
+            if (FlyingPeopleAlpsII.flystart) {
                 this.position.x += FlyingPeopleAlpsII.crc2.canvas.width;
-            this.activity = "flying";
-            if (FlyingPeopleAlpsII.landingzone)
+                this.activity = "flying";
+            }
+            if (FlyingPeopleAlpsII.landingzone) {
                 this.position.y += FlyingPeopleAlpsII.crc2.canvas.height;
-            this.activity = "walking";
-            if (FlyingPeopleAlpsII.hikingzone)
+                this.activity = "walking";
+            }
+            if (FlyingPeopleAlpsII.hikingzone) {
                 this.position.x -= FlyingPeopleAlpsII.crc2.canvas.width;
-            this.activity = "climbing";
+                this.activity = "climbing";
+            }
         }
         fly(_position, _size) {
             this.activity = "flying";

@@ -79,15 +79,21 @@ namespace FlyingPeopleAlpsII {
             this.velocity
             this.position
 
-            if (flystart)
+            if (flystart) {
                 this.position.x += crc2.canvas.width;
-            this.activity = "flying"
-            if (landingzone)
+                this.activity = "flying"
+            }
+
+            if (landingzone) {
                 this.position.y += crc2.canvas.height;
             this.activity = "walking"
-            if (hikingzone)
+            }
+                
+            if (hikingzone){
                 this.position.x -= crc2.canvas.width;
-            this.activity = "climbing"
+                this.activity = "climbing"
+            }
+            
         }
 
         fly(_position: Vector, _size: Vector) {
