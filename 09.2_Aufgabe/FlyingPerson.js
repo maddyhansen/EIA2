@@ -6,6 +6,7 @@ var FlyingPeopleAlpsII;
         velocity;
         activity;
         constructor(_velocity) {
+            this.velocity = new FlyingPeopleAlpsII.Vector(10, 0);
             this.velocity = _velocity;
         }
         getRandomNumber(_max, _min = 0) {

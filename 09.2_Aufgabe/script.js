@@ -18,7 +18,7 @@ var FlyingPeopleAlpsII;
         FlyingPeopleAlpsII.drawSunny(new FlyingPeopleAlpsII.Vector(100, 70));
         FlyingPeopleAlpsII.drawCloud(new FlyingPeopleAlpsII.Vector(500, 175), new FlyingPeopleAlpsII.Vector(250, 75));
         FlyingPeopleAlpsII.drawTriangle(new FlyingPeopleAlpsII.Vector(0, 400));
-        FlyingPeopleAlpsII.drawLandingCircle(new FlyingPeopleAlpsII.Vector(0, 400), new FlyingPeopleAlpsII.Vector(190, 30));
+        FlyingPeopleAlpsII.drawLandingCircle(new FlyingPeopleAlpsII.Vector(0, 400), new FlyingPeopleAlpsII.Vector(190, 30), new FlyingPeopleAlpsII.Vector(190, 30));
         FlyingPeopleAlpsII.drawShack(new FlyingPeopleAlpsII.Vector(700, 550));
         FlyingPeopleAlpsII.drawWindSock(new FlyingPeopleAlpsII.Vector(380, 500));
         FlyingPeopleAlpsII.drawTree(new FlyingPeopleAlpsII.Vector(90, 190));

@@ -23,7 +23,7 @@ namespace FlyingPeopleAlpsII {
         drawSunny(new Vector(100, 70));
         drawCloud(new Vector(500, 175), new Vector(250, 75));
         drawTriangle(new Vector(0, 400));
-        drawLandingCircle(new Vector(0, 400) , new Vector (190, 30));
+        drawLandingCircle(new Vector(0, 400) , new Vector (190, 30), new Vector (190, 30));
         drawShack(new Vector(700, 550));
         drawWindSock(new Vector (380,500));
         drawTree(new Vector (90, 190 ));
@@ -40,9 +40,9 @@ namespace FlyingPeopleAlpsII {
         }
 
     let FlyingPerson: paraglider[] = [];
-        export let landingzone: Vector = new Vector(400, 500)
-        export let hikingzone: Vector = new Vector(0, 440)
-        export let flystart: Vector = new Vector(50, 150)
+        export let landingzone: Vector = new Vector(400, 500);
+        export let hikingzone: Vector = new Vector(0, 440);
+        export let flystart: Vector = new Vector(50, 150);
 
         function createFlyingPerson(): void {
 

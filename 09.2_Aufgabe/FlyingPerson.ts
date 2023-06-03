@@ -6,6 +6,8 @@ namespace FlyingPeopleAlpsII {
         activity: string;
 
         constructor(_velocity: Vector) {
+
+        this.velocity = new Vector(10, 0);
             this.velocity = _velocity;
         }
 
