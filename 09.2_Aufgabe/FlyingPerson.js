@@ -89,19 +89,6 @@ var FlyingPeopleAlpsII;
                 this.activity = "flying";
             }
         }
-        fly(_position, _size) {
-            this.activity = "flying";
-            return this.activity;
-        }
-        walk(_position, _size) {
-            this.activity = "walking";
-            return this.activity;
-            this.velocity = new FlyingPeopleAlpsII.Vector(10, 0); //???
-        }
-        climb(_position, _size) {
-            this.activity = "climbing";
-            return this.activity;
-        }
     }
     FlyingPeopleAlpsII.paraglider = paraglider;
 })(FlyingPeopleAlpsII || (FlyingPeopleAlpsII = {}));

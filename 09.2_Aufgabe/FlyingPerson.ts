@@ -107,7 +107,7 @@ namespace FlyingPeopleAlpsII {
 
         }
 
-        fly(_position: Vector, _size: Vector) {
+        /*fly(_position: Vector, _size: Vector) {
             this.activity = "flying";
             return this.activity;
         }
@@ -116,13 +116,13 @@ namespace FlyingPeopleAlpsII {
             this.activity = "walking";
             return this.activity;
 
-            this.velocity = new Vector(10, 0) //???
+            //this.velocity = new Vector(10, 0) //???
         }
 
         climb(_position: Vector, _size: Vector) {
             this.activity = "climbing"
             return this.activity;
-        }
+        }*/
 
     }
 }
