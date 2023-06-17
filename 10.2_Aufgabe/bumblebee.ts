@@ -1,12 +1,10 @@
-namespace FlyingPeopleAlpsIII{
+/*namespace FlyingPeopleAlpsIII{
     
-    export class bumblebees {
-    position: Vector;
-    velocity: Vector;
-    size: number;
+    export class bumblebees extends FlyingObject {
+    size: Vector;
 
 
-    constructor(_size: number, _position?: Vector) {
+    /*constructor(_size: number, _position?: Vector) {
 
 
         if (_position) 
@@ -18,7 +16,7 @@ namespace FlyingPeopleAlpsIII{
         this.velocity.randomize(120, 20);
     }
 
-    move(_timeslice: number): void {
+    doActivity(_timeslice: number): void {
 
         let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
         offset.scale(_timeslice);
@@ -64,4 +62,4 @@ namespace FlyingPeopleAlpsIII{
     };
 }
 
-}
+}*/

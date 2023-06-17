@@ -34,72 +34,42 @@ var FlyingPeopleAlpsIII;
         createBumbleBee();
         window.setInterval(animateBumblebee, 1);
     }
-    let FlyingPerson = [];
-    let insectArray = [];
-    console.log(FlyingPerson[5]);
-    FlyingPeopleAlpsIII.landingzone = new FlyingPeopleAlpsIII.Vector(400, 500); //Vector is not a constructor? (Konsole im Browser (debugger) meckert, hab aber keine Ahnung was das Problem ist...)
+    let EverythingsFlying = [];
+    console.log(EverythingsFlying[5]);
+    //let FlyingPerson: paraglider[] = [];
+    //let insectArray: bumblebees[] = [];
+    FlyingPeopleAlpsIII.landingzone = new FlyingPeopleAlpsIII.Vector(400, 500);
     FlyingPeopleAlpsIII.hikingzone = new FlyingPeopleAlpsIII.Vector(0, 440);
     FlyingPeopleAlpsIII.flystart = new FlyingPeopleAlpsIII.Vector(50, 150);
     function createFlyingPerson() {
-        for (let iFlyingPerson = 0; iFlyingPerson < 10; iFlyingPerson++) {
-            let paraglideri = new FlyingPeopleAlpsIII.paraglider(new FlyingPeopleAlpsIII.Vector(400, 500), "flying");
-            FlyingPerson.push(paraglideri);
-            //console.log(paraglideri)
+        for (let iFlyingObject = 0; iFlyingObject < 10; iFlyingObject++) {
+            let paraglideri = new FlyingPeopleAlpsIII.paraglider(new FlyingPeopleAlpsIII.Vector(400, 500), new FlyingPeopleAlpsIII.Vector(120, 20));
+            EverythingsFlying.push(paraglideri);
+            console.log(paraglideri);
             //console.log(FlyingPerson)
         }
     }
     function animateFlyingPerson() {
         FlyingPeopleAlpsIII.crc2.clearRect(0, 0, 1000, 600);
         FlyingPeopleAlpsIII.crc2.putImageData(FlyingPeopleAlpsIII.imgData, 0, 0);
-        for (let paraglideri of FlyingPerson) {
-            paraglideri.move(1 / 50); //hiermit kommt er auch nicht klar
+        for (let paraglideri of EverythingsFlying) {
+            paraglideri.doActivity(1 / 50);
             paraglideri.draw();
         }
     }
     function createBumbleBee() {
         for (let i = 0; i < 5; i++) {
-            let bumblebee = new FlyingPeopleAlpsIII.bumblebees(0.5, new FlyingPeopleAlpsIII.Vector(10, 0));
-            insectArray.push(bumblebee);
+            let bumblebee = new FlyingPeopleAlpsIII.bumblebees(new FlyingPeopleAlpsIII.Vector(0, 0.5), new FlyingPeopleAlpsIII.Vector(10, 0));
+            EverythingsFlying.push(bumblebee);
         }
     }
     function animateBumblebee() {
         FlyingPeopleAlpsIII.crc2.clearRect(0, 0, 1000, 600);
         FlyingPeopleAlpsIII.crc2.putImageData(FlyingPeopleAlpsIII.imgData, 0, 0);
-        for (let bumblebee of insectArray) {
-            bumblebee.move(1 / 50);
+        for (let bumblebee of EverythingsFlying) {
+            bumblebee.doActivity(1 / 50);
             bumblebee.draw();
         }
     }
-    /* function drawflyingPerson(_position: Vector, _size: Vector) {
- 
- 
-         crc2.beginPath();
-         crc2.fillStyle = "#003300";
-         crc2.fillRect(_position.x, _position.y, 10, 16);
-         crc2.fillStyle = "#ffffcc";
-         crc2.fillRect(_position.x, _position.y - 6, 10, 10);
-         crc2.closePath();
- 
-         crc2.beginPath();
-         crc2.moveTo(_position.x, _position.y);
-         crc2.lineTo(_position.x - 20, _position.y - 20);
-         crc2.lineTo(_position.x + 30, _position.y - 30);
-         crc2.stroke();
-         crc2.fillStyle = "#b30000";
-         crc2.fill();
-         crc2.closePath();
- 
-     };
- 
-     function drawPerson(_position: Vector, _size: Vector) {
- 
-         crc2.beginPath();
-         crc2.fillStyle = "#003300";
-         crc2.fillRect(_position.x, _position.y, 10, 16);
- 
-         crc2.fillStyle = "#ffffcc";
-         crc2.fillRect(_position.x, _position.y - 6, 10, 10);
-         crc2.closePath();
-     }*/
 })(FlyingPeopleAlpsIII || (FlyingPeopleAlpsIII = {}));
 //# sourceMappingURL=script.js.map
