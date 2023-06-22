@@ -37,29 +37,30 @@ namespace FlyingPeopleAlpsIII {
         console.log(horizon)
 
         crc2.putImageData(imgData, 0, 0);
-
-        createFlyingPerson();
-        window.setInterval(animateFlyingPerson, 1000) //As soon as I change the number the FlyingPerson vanishes. I think the Intervall is going through changeColor instead of going through move().... Dont know how to fix it
-
         createBumbleBee();
-        window.setInterval(animateBumblebee, 1);
+        createFlyingPerson();
+        window.setInterval(animateFlyingPerson, 25) 
+
     }
 
-    let EverythingsFlying: FlyingObject[] = [];
-    console.log(EverythingsFlying[5])
-    //let FlyingPerson: paraglider[] = [];
-    //let insectArray: bumblebees[] = [];
+    let ObjectFlying: FlyingObject[] = [];
 
-    export let landingzone: Vector = new Vector(400, 500); 
+    export let landingzone: Vector = new Vector(400, 500);
     export let hikingzone: Vector = new Vector(0, 440);
     export let flystart: Vector = new Vector(50, 150);
 
     function createFlyingPerson(): void {
         for (let iFlyingObject: number = 0; iFlyingObject < 10; iFlyingObject++) {
-            let paraglideri: paraglider = new paraglider(new Vector(400, 500), new Vector(120,20));
-            EverythingsFlying.push(paraglideri);
-            console.log(paraglideri)
-            //console.log(FlyingPerson)
+            let paraglideri: Paraglider = new Paraglider();
+            ObjectFlying.push(paraglideri);
+        }
+
+    }
+
+    function createBumbleBee(): void {
+        for (let i: number = 0; i < 5; i++) {
+            let bumblebee: Bumblebees = new Bumblebees();
+            ObjectFlying.push(bumblebee);
         }
     }
 
@@ -67,28 +68,11 @@ namespace FlyingPeopleAlpsIII {
         crc2.clearRect(0, 0, 1000, 600);
         crc2.putImageData(imgData, 0, 0);
 
-        for (let paraglideri of EverythingsFlying) {
+        for (let paraglideri of ObjectFlying) {
             paraglideri.doActivity(1 / 50);
             paraglideri.draw();
         }
 
-    }
-
-    function createBumbleBee(): void {
-        for (let i: number = 0; i < 5; i++) {
-            let bumblebee: bumblebees = new bumblebees(new Vector(0 , 0.5), new Vector(10, 0));
-            EverythingsFlying.push(bumblebee);
-        }
-    }
-
-    function animateBumblebee(): void {
-        crc2.clearRect(0, 0, 1000, 600);
-        crc2.putImageData(imgData, 0, 0);
-
-        for (let bumblebee of EverythingsFlying) {
-            bumblebee.doActivity(1 / 50);
-            bumblebee.draw();
-        }
     }
 
 }
