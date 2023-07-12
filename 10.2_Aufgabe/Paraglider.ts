@@ -1,6 +1,6 @@
 namespace FlyingPeopleAlpsIII {
 
-    export class Paraglider extends FlyingObject { /*Klassen groß udn extra datei*/
+    export class Paraglider extends FlyingObject { 
         activity: string;
         color: string; 
 

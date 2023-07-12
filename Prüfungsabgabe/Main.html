@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IceCreamShop</title>
+    <script src="./Main.js" defer></script>
+    <script src="./Formular.js" defer></script>
+    <script src="./HumanClass.js" defer></script>
+    <script src="./Style.css" defer></script>
+</head>
+
+<body>
+    <canvas width="2000px" height="1500px"></canvas>
+    <div class="hidden">
+        <button>Start</button>
+    </div>
+    <main>
+        <div>
+            <h1 id="h1">Icys Ice Cream Shop</h1>
+            <h2 id="h2">ORDER FORMULAR </h2>
+            <h3 id="h3">Please choose your order or click the suprise button for a suprise Ice Cream!</h3>
+            <form id="formular">
+                <div>
+                    <fieldset id="field">
+                        <h3>Flavour</h3>
+                        <label>
+                            <input type="radio" id="vanilla" name="icecream" value="HTML">
+                            Vanilla
+                        </label>
+                        <label>
+                            <input type="radio" id="choco" name="icecream" value="HTML">
+                            Choclate</label>
+                        <label>
+                            <input type="radio" id="strawberry" name="icecream" value="HTML">
+                            Strawberry</label><br>
+
+                        <div id="toppings">
+                            <h3>Toppings</h3>
+                            <label>
+                                <input type="radio" id="sprinkles" name="icecream" value="HTML">
+                                Sprinkles
+                            </label>
+                            <label>
+                                <input type="radio" id="cookies" name="toppings" value="HTML">
+                                Cookie Chips
+                            </label>
+                            <label>
+                                <input type="radio" id="fruits" name="toppings" value="HTML">
+                                Fruits
+                            </label><br>
+                            <label>
+                                <input type="radio" id="cream" name="toppings" value="HTML">
+                                Heavy Cream
+                            </label>
+                            <label>
+                                <input type="radio" id="nuts" name="toppings" value="HTML">
+                                Cookie Chips
+                            </label>
+                        </div>
+
+                        <div>
+                            <h3>Container</h3>
+                            <select name="container" id="name">
+                                <option value="waffle">Waffle</option>
+                                <option value="glass bevarege">Glass bevarege</option>
+                                <option value="papercup">Papercup</option>
+                            </select> <br>
+
+                            <button id="add" type="button">ADD</button>
+                            <button id="suprise" type="button">SUPRISE</button>
+                        </div>
+                </div>
+                </fieldset>
+            </form>
+    </main>
+</body>
+
+</html>
