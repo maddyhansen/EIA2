@@ -92,12 +92,14 @@ var IceShop;
         form.style.setProperty("visibility", "visible");
         console.log("Hi, please fill the fields out for your ToDo");
     }
+    IceShop.newTodo = newTodo;
     function addToDO() {
         form.style.setProperty("visibility", "hidden");
         generateTask();
         sendTask();
         console.log("Hi, I am a ToDo added to the list!");
     }
+    IceShop.addToDO = addToDO;
     function editForm() {
         form.style.setProperty("visibility", "visible");
         deleteToDO();
@@ -110,5 +112,6 @@ var IceShop;
         console.log("Hi, I am editing my todo");
         alert("Youre editing the task.");
     }
+    IceShop.editForm = editForm;
 })(IceShop || (IceShop = {}));
 //# sourceMappingURL=Formular.js.map

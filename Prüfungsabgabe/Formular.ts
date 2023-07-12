@@ -119,19 +119,19 @@ namespace IceShop {
     }
     communicate("data.json");
 
-    function newTodo() {
+    export function newTodo() {
         form!.style.setProperty("visibility", "visible");
         console.log("Hi, please fill the fields out for your ToDo")
     }
 
-    function addToDO() {
+   export function addToDO() {
         form!.style.setProperty("visibility", "hidden");
         generateTask();
         sendTask();
         console.log("Hi, I am a ToDo added to the list!")
     }
 
-    function editForm() {
+    export function editForm() {
         form!.style.setProperty("visibility", "visible");
         deleteToDO();
         let query: URLSearchParams = new URLSearchParams(<any>formData);
