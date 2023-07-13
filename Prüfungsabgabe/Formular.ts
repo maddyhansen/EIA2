@@ -1,17 +1,6 @@
 namespace IceShop {
 
-    console.log("Start")
-
-    window.addEventListener('load', handleLoad);
-    function handleLoad(): void {
-        document.getElementById("newtodo")!.addEventListener('click', newTodo);
-        document.getElementById("add")!.addEventListener('click', addToDO);
-        deletebutton!.addEventListener('click', deleteToDO);
-        editbutton.addEventListener('click', editForm)
-        document.getElementById("add")!.addEventListener('click', sendTask);
-        let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#add");
-        submit.addEventListener("click", sendTask);
-    }
+    /*console.log("Start")
 
     let deletebutton = document.createElement("button");
     deletebutton.setAttribute("id", "delete");
@@ -142,5 +131,5 @@ namespace IceShop {
         query.set("data", JSON.stringify(json)); // benötige eine for schleife, die id sucht und diese dann im html anzeigt, hab das aber nicht geschafft und daher aus dem code erstmal rausgehauen.
         console.log("Hi, I am editing my todo")
         alert("Youre editing the task.")
-    }
+    }*/
 }
