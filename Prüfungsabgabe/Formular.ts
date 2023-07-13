@@ -1,6 +1,6 @@
 namespace IceShop {
 
-    /*console.log("Start")
+    console.log("Start")
 
     let deletebutton = document.createElement("button");
     deletebutton.setAttribute("id", "delete");
@@ -131,5 +131,5 @@ namespace IceShop {
         query.set("data", JSON.stringify(json)); // benötige eine for schleife, die id sucht und diese dann im html anzeigt, hab das aber nicht geschafft und daher aus dem code erstmal rausgehauen.
         console.log("Hi, I am editing my todo")
         alert("Youre editing the task.")
-    }*/
+    }
 }
