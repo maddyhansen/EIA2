@@ -7,6 +7,7 @@ namespace IceShop {
         drawCounter();
         drawBenchandChair();
         drawTable();
+        drawHuman();
         console.log("handleLoad working");
     };
 
@@ -186,4 +187,70 @@ namespace IceShop {
         crc2.closePath();
     }
 
+    function drawHuman(): void {
+        //Smilemad
+        //Head
+        crc2.beginPath();
+        crc2.fillStyle = "#c71b0f"; //mad head
+        crc2.fillRect(720, 350, 30, 50);
+
+        //Face
+        crc2.fillStyle = "black";
+        crc2.fillRect(725, 360, 5, 5);
+
+        crc2.fillStyle = "black";
+        crc2.fillRect(740, 360, 5, 5);
+
+        //Mouthwincle sad
+        //crc2.beginPath();
+        //crc2.fillStyle = "black";
+        //crc2.arc(735, 375, 7, 1 * Math.PI, 2 * Math.PI);
+        //crc2.stroke();
+        //crc2.closePath();
+        //crc2.beginPath();
+
+        //Smileunwell
+        //Head
+        crc2.beginPath();
+        crc2.fillStyle = "#f90"; //unwell head
+        crc2.fillRect(720, 350, 30, 50);
+
+        //Face
+        crc2.fillStyle = "black";
+        crc2.fillRect(725, 360, 5, 5);
+
+        crc2.fillStyle = "black";
+        crc2.fillRect(740, 360, 5, 5);
+
+        //Mouthwincle unwell
+       // crc2.fillStyle = "black";
+       // crc2.fillRect(730,370, 15, 2);
+
+        //Smilehappy
+        //Head
+        crc2.beginPath();
+        crc2.fillStyle = "#ffa78f"; //happy
+        crc2.fillRect(720, 350, 30, 50);
+
+        //Face
+        crc2.fillStyle = "black";
+        crc2.fillRect(725, 360, 5, 5);
+
+        crc2.fillStyle = "black";
+        crc2.fillRect(740, 360, 5, 5);
+
+        //Mouthwincle happy
+        crc2.beginPath();
+        crc2.fillStyle = "black";
+        crc2.arc(735, 375, 7, 1 * Math.PI, 2 * Math.PI);
+        crc2.stroke();
+        crc2.closePath();
+        crc2.beginPath();
+
+        //Body
+        crc2.fillStyle = "#1d65c3";
+        crc2.fillRect(720, 380, 30, 30);
+        crc2.closePath();
+
+    }
 }

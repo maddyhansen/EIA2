@@ -6,24 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IceCreamShop</title>
     <script src="./Background.js" defer></script>
-    <script src="./Main.js"defer></script>
-    <script src="./Formular.js"defer></script>
-    <script src="./HumanClass.js"defer></script>
-   <link rel="stylesheet" href="./Style.css">
+    <script src="./Main.js" defer></script>
+    <script src="./Formular.js" defer></script>
+    <script src="./HumanClass.js" defer></script>
+    <link rel="stylesheet" href="./Style.css">
 </head>
 
 <body id="body">
-   <div class="hidden">
+    <div id="gamestart">
+        <button id="start">START</button>
+        <p id="explain">Start the ICE CREAM SHOP Game! <br> How many customer can you make happy?</p>
+    </div>
+    <div id="canvas" class="hidden">
         <canvas width="2000px" height="1000"></canvas>
     </div>
-    <!--- <div class="hidden">
-        <button>Start</button>
-    </div>
-    <main class="hidden">
-        <div>
+    <main id="order" class="hidden">
+        <div id="design">
             <h1 id="h1">Icys Ice Cream Shop</h1>
             <h2 id="h2">ORDER FORMULAR </h2>
-            <h3 id="h3">Please choose your order or click the suprise button for a suprise Ice Cream!</h3>
+            <h3 id="h3">Please choose your order <br> or click the suprise button <br> for a suprise Ice Cream!</h3>
             <form id="formular">
                 <div>
                     <fieldset id="field">
@@ -42,7 +43,7 @@
                         <div id="toppings">
                             <h3>Toppings</h3>
                             <label>
-                                <input type="radio" id="sprinkles" name="icecream" value="HTML">
+                                <input type="radio" id="sprinkles" name="toppings" value="HTML">
                                 Sprinkles
                             </label>
                             <label>
@@ -62,12 +63,11 @@
                                 Cookie Chips
                             </label>
                         </div>
-
                         <div>
                             <h3>Container</h3>
                             <select name="container" id="name">
                                 <option value="waffle">Waffle</option>
-                                <option value="glass bevarege">Glass bevarege</option>
+                                <option value="glass bevarege">Glass bevarige</option>
                                 <option value="papercup">Papercup</option>
                             </select> <br>
 
@@ -77,7 +77,7 @@
                 </div>
                 </fieldset>
             </form>
-    </main>--->
+    </main>
 </body>
 
 </html>

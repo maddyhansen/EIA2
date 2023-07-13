@@ -8,8 +8,14 @@ var IceShop;
         if (!canvas)
             return;
         IceShop.crc2 = canvas.getContext("2d");
+        document.getElementById("start").addEventListener('click', startGame);
         IceShop.drawBackground();
     }
     IceShop.handleload = handleload;
+    function startGame() {
+        document.getElementById("canvas").classList.remove("hidden");
+        document.getElementById("gamestart").classList.add("hidden");
+        document.getElementById("order").classList.add("hidden");
+    }
 })(IceShop || (IceShop = {}));
 //# sourceMappingURL=Main.js.map

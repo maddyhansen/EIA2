@@ -9,7 +9,15 @@ namespace IceShop {
         if (!canvas)
             return;
         crc2 = <CanvasRenderingContext2D>canvas!.getContext("2d")
+        document.getElementById("start")!.addEventListener('click', startGame);
         drawBackground();
+
+    }
+
+    function startGame(){
+        document.getElementById("canvas")!.classList.remove("hidden");
+        document.getElementById("gamestart")!.classList.add("hidden");
+        document.getElementById("order")!.classList.add("hidden");
 
     }
 
