@@ -7,6 +7,7 @@ var IceShop;
         drawFontaine();
         drawCounter();
         drawBenchandChair();
+        drawTable();
         console.log("handleLoad working");
     }
     IceShop.drawBackground = drawBackground;
@@ -137,6 +138,26 @@ var IceShop;
         IceShop.crc2.fillStyle = "#733d07";
         IceShop.crc2.fillRect(720, 350, 30, 30);
         IceShop.crc2.fillRect(780, 300, 30, 30);
+    }
+    function drawTable() {
+        //Table left upper corner 
+        IceShop.crc2.fillStyle = "#78c936";
+        IceShop.crc2.beginPath();
+        IceShop.crc2.arc(155, 155, 30, 0, 2 * Math.PI);
+        IceShop.crc2.fill();
+        IceShop.crc2.closePath();
+        //Table right upper corner 
+        IceShop.crc2.fillStyle = "#78c936";
+        IceShop.crc2.beginPath();
+        IceShop.crc2.arc(815, 160, 30, 0, 2 * Math.PI);
+        IceShop.crc2.fill();
+        IceShop.crc2.closePath();
+        //Table right down corner 
+        IceShop.crc2.fillStyle = "#78c936";
+        IceShop.crc2.beginPath();
+        IceShop.crc2.arc(800, 365, 30, 0, 2 * Math.PI);
+        IceShop.crc2.fill();
+        IceShop.crc2.closePath();
     }
 })(IceShop || (IceShop = {}));
 //# sourceMappingURL=Background.js.map

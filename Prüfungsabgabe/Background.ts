@@ -5,7 +5,8 @@ namespace IceShop {
         drawWallsAndFloor();
         drawFontaine();
         drawCounter();
-        drawBenchandChair()
+        drawBenchandChair();
+        drawTable();
         console.log("handleLoad working");
     };
 
@@ -160,6 +161,29 @@ namespace IceShop {
         crc2.fillStyle = "#733d07";
         crc2.fillRect(720, 350, 30, 30);
         crc2.fillRect(780, 300, 30, 30);
+    }
+
+    function drawTable(): void {
+        //Table left upper corner 
+        crc2.fillStyle = "#78c936";
+        crc2.beginPath();
+        crc2.arc(155, 155, 30, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.closePath();
+
+        //Table right upper corner 
+        crc2.fillStyle = "#78c936";
+        crc2.beginPath();
+        crc2.arc(815, 160, 30, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.closePath();
+
+        //Table right down corner 
+        crc2.fillStyle = "#78c936";
+        crc2.beginPath();
+        crc2.arc(800, 365, 30, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.closePath();
     }
 
 }
