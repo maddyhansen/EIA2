@@ -2,9 +2,6 @@
 var IceShop;
 (function (IceShop) {
     console.log("Start");
-    let deletebutton = document.createElement("button");
-    deletebutton.setAttribute("id", "delete");
-    deletebutton.innerHTML = "Delete";
     let editbutton = document.createElement("button");
     editbutton.setAttribute("id", "edit");
     editbutton.innerHTML = "Edit";
