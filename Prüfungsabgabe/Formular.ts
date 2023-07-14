@@ -1,131 +1,99 @@
 namespace IceShop {
 
-    console.log("Start")
-
-    let editbutton = document.createElement("button");
-    editbutton.setAttribute("id", "edit");
-    editbutton.innerHTML = "Edit";
-    editbutton!.addEventListener('click', editForm);
-
-    let newformular = document.createElement("div");
-    newformular.setAttribute("id", "newtask");
-    let newtask = document.createElement("p");
-    newformular.setAttribute("id", "newtask");
-
-    let form: HTMLFormElement = <HTMLFormElement>document.querySelector('#formular');
-    let formular = document.getElementById('hidden')
-    let InformationBack: string[] = [];
-    let formData = new FormData(form);
-
-    export interface Task {
-        name: string;
-        todo: string;
-        date: string;
-        comment: string;
-        in_work: string;
+    export function giveOrder() {
+        edit.addEventListener("click", editbtn);
+        document.querySelector("#add")!.addEventListener("click", Orderbutton);
+        submit.addEventListener("click", sendTask);
     }
 
-    export interface Datainput {
-        [key: string]: Task[];
-    }
+    export interface data {
+        [key: string]: FormDataEntryValue;
+    };
+    let edit = document.createElement("button");   // edit button erstellen
+    edit.setAttribute("id", "edit");
+    edit.innerHTML = "Edit";
+    let newdiv = document.createElement("div");    // div element order  erstellen
+    newdiv.setAttribute("id", "orders");
+    let newP = document.createElement("p");    // p element für to do erstellen
+    newP.setAttribute("id", "newp");
+    let form: HTMLFormElement = document.querySelector('#myform')!;
 
-    function getValues(): string[] {
-        let workTask: string[] = [];
-        let value0 = formData.get('names') as string;
-        let value1 = formData.get('todo') as string;
-        let value2 = formData.get('date') as string;
-        let value3 = formData.get('comment') as string;
-        let value4 = formData.get('in_work') as string;
+    export let Orders: String[] = [];
 
-        workTask = [value0, value1, value2, value3, value4];
-        console.log(workTask);
-        InformationBack = workTask;
-        console.log(value0)
-        return InformationBack;
-        console.log(InformationBack);
+    // aufruf bei order button
+    export function getData(): String[] {
 
+        let IceOrder: String[];
+
+        let formData = new FormData(form);
+        console.log(formData);
+        let input0 = formData.get('scoop') as string;
+        let input1 = formData.get('icecream') as string;
+        let input2 = formData.get('toppings') as string;
+        let input3 = formData.get('container') as string;
+
+        IceOrder = [input0, input1, input2, input3];
+        console.log("getData: " + IceOrder);
+        Orders = IceOrder;
+        return Orders;
     };
 
-    interface FormDataJSON {
+    export interface FormDataJSON {
         [key: string]: FormDataEntryValue | FormDataEntryValue[];
     }
 
-    let formData1: FormData = new FormData(form);
-    let json: FormDataJSON = {};
+    export let formData: FormData = new FormData(form);
+    export let json: FormDataJSON = {};
 
-    for (let key of formData1.keys())
+    for (let key of formData.keys())
         if (!json[key]) {
-            let values: FormDataEntryValue[] = formData1.getAll(key);
+            let values: FormDataEntryValue[] = formData.getAll(key);
             json[key] = values.length > 1 ? values : values[0];
         }
 
-    function generateTask() {
-        formular!.style.setProperty("visibility", "visible");
-        getValues();
-        document.getElementById("list")!.appendChild(newformular);
-        document.querySelector("#list")!.appendChild(newtask);
-        newtask.innerHTML = "WG-Mensch: " + InformationBack[0] + " ; Datum: " + InformationBack[2] + "  Kommentar: " + InformationBack[3] + "  To-Do: " + InformationBack[1] + " In Bearbeitung " + InformationBack[4];
+    export let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#add");
 
-        newtask.appendChild(deletebutton);
-        newtask.appendChild(editbutton);
-    }
-
-    async function deleteToDO() {
-        console.log("Hi, I am done!")
-        newformular!.parentNode!.removeChild(newtask);
-        alert("Youre deleting the task.")
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        query.set("command", "delete");
-        query.set("collection", "ToDoOne");
-        query.set("delete", "id"); // wie sag ich ihm get id? //for in schleife - hat auch nicht so geklappt wie ich wollte, daher erstmal rausgeworfen 
-        query.set("id", "?");
-        await fetch("https://webuser.hs-furtwangen.de/~hansenma/database/" + "?" + query.toString());
-
-    }
-
-    async function sendTask(): Promise<void> {
+    export async function sendTask(_event: Event): Promise<void> { //link zum versenden funktioniert nicht
+        let formData: FormData = new FormData(form);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         query.set("command", "insert");
-        query.set("collection", "ToDoOne");
-        query.set("insert", "newtask")
-        //query.set("data", JSON.stringify(json));
+        query.set("collection", "Order");
+        query.set("data", JSON.stringify(json));
         await fetch("https://webuser.hs-furtwangen.de/~hansenma/database/?" + query.toString());
-        console.log(fetch);
-        alert("Submit Task");
     }
 
-    async function communicate(_url: RequestInfo): Promise<void> {
+    export async function communicate(_url: RequestInfo): Promise<void> {
         let response: Response = await fetch(_url);
         let offer: string = await response.text();
-        let gotdata: Datainput = JSON.parse(offer);
-        // gotdata is empty, offer is a string, cant read the stuff out
-        document.querySelector("#list")!.innerHTML = "WG-Mensch: " + offer;
-        console.log(gotdata);
+        let gotdata: data = JSON.parse(offer);
+        console.log("this" + gotdata);
+        console.log("Response", response);
+        console.log("before" + offer);
     }
+
     communicate("data.json");
 
-    export function newTodo() {
-        form!.style.setProperty("visibility", "visible");
-        console.log("Hi, please fill the fields out for your ToDo")
+    export function Orderbutton(e: any): any {
+        getData();
+
+        document.getElementById("list")!.appendChild(newdiv);
+        document.querySelector("#list")!.appendChild(newP);
+
+        newP.innerHTML = "Scoops: " + Orders[0] + ", <br> Flavour: " + Orders[1] + ", <br> Toppings: " + Orders[2] + "  <br> Container: " + Orders[3];
+        e.preventDefault();
+        newP.appendChild(edit);
+        document.getElementById("order")!.classList.add("hidden");
     }
 
-   export function addToDO() {
-        form!.style.setProperty("visibility", "hidden");
-        generateTask();
-        sendTask();
-        console.log("Hi, I am a ToDo added to the list!")
+    function editbtn(): void {
+        document.getElementById("order")!.classList.remove("hidden");
+        document.getElementById("list")!.removeChild(newdiv);
+        document.querySelector("#list")!.removeChild(newP);
     }
 
-    export function editForm() {
-        form!.style.setProperty("visibility", "visible");
-        deleteToDO();
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        query.set("update", "collection");
-        query.set("collection", "ToDoOne");
-        query.set("update", "id");
-        query.set("id", "?");
-        query.set("data", JSON.stringify(json)); // benötige eine for schleife, die id sucht und diese dann im html anzeigt, hab das aber nicht geschafft und daher aus dem code erstmal rausgehauen.
-        console.log("Hi, I am editing my todo")
-        alert("Youre editing the task.")
+    function SupriseButton() {
+
     }
+
+
 }

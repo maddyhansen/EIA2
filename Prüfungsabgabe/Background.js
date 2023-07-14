@@ -9,6 +9,7 @@ var IceShop;
         drawBenchandChair();
         drawTable();
         drawHuman();
+        drawWaiter();
         console.log("handleLoad working");
     }
     IceShop.drawBackground = drawBackground;
@@ -23,18 +24,13 @@ var IceShop;
         //Walls
         IceShop.crc2.fillStyle = "#ff6a00";
         IceShop.crc2.fillRect(50, 50, 850, 20);
-        IceShop.crc2.fillRect(1390, 320, 10, 200);
         IceShop.crc2.fillStyle = "#ff6a00";
         IceShop.crc2.fillRect(600, 450, 300, 20);
-        IceShop.crc2.fillRect(1390, 320, 10, 200);
         IceShop.crc2.fillStyle = "#ff6a00";
         IceShop.crc2.fillRect(50, 450, 350, 20);
-        IceShop.crc2.fillRect(1390, 320, 10, 200);
         IceShop.crc2.fillStyle = "#ff6a00";
-        IceShop.crc2.fillRect(50, 450, 350, 20);
         IceShop.crc2.fillRect(50, 50, 20, 400);
         IceShop.crc2.fillStyle = "#ff6a00";
-        IceShop.crc2.fillRect(50, 450, 350, 20);
         IceShop.crc2.fillRect(900, 50, 20, 420);
     }
     ;
@@ -202,16 +198,66 @@ var IceShop;
         IceShop.crc2.fillStyle = "black";
         IceShop.crc2.fillRect(740, 360, 5, 5);
         //Mouthwincle happy
-        IceShop.crc2.beginPath();
-        IceShop.crc2.fillStyle = "black";
-        IceShop.crc2.arc(735, 375, 7, 1 * Math.PI, 2 * Math.PI);
-        IceShop.crc2.stroke();
-        IceShop.crc2.closePath();
-        IceShop.crc2.beginPath();
+        /*
+        crc2.beginPath();
+        crc2.strokeStyle = "black";
+        crc2.arc(735, 368, 5, 0,  1 * Math.PI);
+        crc2.stroke();
+        crc2.closePath();
+        crc2.beginPath();*/
         //Body
         IceShop.crc2.fillStyle = "#1d65c3";
         IceShop.crc2.fillRect(720, 380, 30, 30);
         IceShop.crc2.closePath();
+    }
+    function drawWaiter() {
+        //Smilehappy
+        //Head
+        IceShop.crc2.beginPath();
+        IceShop.crc2.fillStyle = "#ffa78f"; //happy
+        IceShop.crc2.fillRect(720, 350, 30, 50);
+        //Face
+        IceShop.crc2.fillStyle = "black";
+        IceShop.crc2.fillRect(725, 360, 5, 5);
+        IceShop.crc2.fillStyle = "black";
+        IceShop.crc2.fillRect(740, 360, 5, 5);
+        //Mouthwincle happy
+        IceShop.crc2.beginPath();
+        IceShop.crc2.strokeStyle = "black";
+        IceShop.crc2.arc(735, 368, 5, 0, 1 * Math.PI);
+        IceShop.crc2.stroke();
+        IceShop.crc2.closePath();
+        IceShop.crc2.beginPath();
+        //Body
+        IceShop.crc2.fillStyle = "white";
+        IceShop.crc2.fillRect(720, 380, 30, 30);
+        IceShop.crc2.closePath();
+        //Tie and Blazer
+        IceShop.crc2.fillStyle = "black";
+        IceShop.crc2.beginPath();
+        IceShop.crc2.arc(735, 383, 5, 0, 2 * Math.PI);
+        IceShop.crc2.fill();
+        IceShop.crc2.closePath();
+        IceShop.crc2.fillStyle = "black";
+        IceShop.crc2.beginPath();
+        IceShop.crc2.arc(735, 380, 5, 0, 2 * Math.PI);
+        IceShop.crc2.fill();
+        IceShop.crc2.closePath();
+        IceShop.crc2.fillStyle = "black";
+        IceShop.crc2.beginPath();
+        IceShop.crc2.arc(735, 390, 5, 0, 2 * Math.PI);
+        IceShop.crc2.fill();
+        IceShop.crc2.closePath();
+        IceShop.crc2.beginPath();
+        IceShop.crc2.moveTo(720, 410);
+        IceShop.crc2.lineTo(750, 390);
+        IceShop.crc2.lineTo(750, 410);
+        IceShop.crc2.fill();
+        IceShop.crc2.beginPath();
+        IceShop.crc2.moveTo(750, 410);
+        IceShop.crc2.lineTo(720, 390);
+        IceShop.crc2.lineTo(720, 410);
+        IceShop.crc2.fill();
     }
 })(IceShop || (IceShop = {}));
 //# sourceMappingURL=Background.js.map

@@ -17,66 +17,71 @@
         <button id="start">START</button>
         <p id="explain">Start the ICE CREAM SHOP Game! <br> How many customer can you make happy?</p>
     </div>
+
     <div id="canvas" class="hidden">
-        <canvas width="2000px" height="1000"></canvas>
+        <canvas width="1000px" height="500px"></canvas>
     </div>
-    <main id="order" class="hidden">
-        <div id="design">
-            <h1 id="h1">Icys Ice Cream Shop</h1>
-            <h2 id="h2">ORDER FORMULAR </h2>
-            <h3 id="h3">Please choose your order <br> or click the suprise button <br> for a suprise Ice Cream!</h3>
-            <form id="formular">
-                <div>
-                    <fieldset id="field">
-                        <h3>Flavour</h3>
-                        <label>
-                            <input type="radio" id="vanilla" name="icecream" value="HTML">
-                            Vanilla
-                        </label>
-                        <label>
-                            <input type="radio" id="choco" name="icecream" value="HTML">
-                            Choclate</label>
-                        <label>
-                            <input type="radio" id="strawberry" name="icecream" value="HTML">
-                            Strawberry</label><br>
 
-                        <div id="toppings">
-                            <h3>Toppings</h3>
-                            <label>
-                                <input type="radio" id="sprinkles" name="toppings" value="HTML">
-                                Sprinkles
-                            </label>
-                            <label>
-                                <input type="radio" id="cookies" name="toppings" value="HTML">
-                                Cookie Chips
-                            </label>
-                            <label>
-                                <input type="radio" id="fruits" name="toppings" value="HTML">
-                                Fruits
-                            </label><br>
-                            <label>
-                                <input type="radio" id="cream" name="toppings" value="HTML">
-                                Heavy Cream
-                            </label>
-                            <label>
-                                <input type="radio" id="nuts" name="toppings" value="HTML">
-                                Cookie Chips
-                            </label>
-                        </div>
-                        <div>
-                            <h3>Container</h3>
-                            <select name="container" id="name">
-                                <option value="waffle">Waffle</option>
-                                <option value="glass bevarege">Glass bevarige</option>
-                                <option value="papercup">Papercup</option>
-                            </select> <br>
+    <div id="list" class="hidden"></div>
 
-                            <button id="add" type="button">ADD</button>
-                            <button id="suprise" type="button">SUPRISE</button>
-                        </div>
+    <main class="hidden" id="order">
+        <h1 id="h1">Icys Ice Cream Shop</h1>
+        <h2 id="h2">ORDER FORMULAR </h2>
+        <h3 id="h3">Please choose your order or click the suprise button for a suprise Ice Cream!</h3>
+        <form id="myform">
+            <fieldset id="field">
+                <h4>Container</h4>
+                <select name="scoop" id="scoop">
+                    <option value="one">One Scoop</option>
+                    <option value="two">Two Scopps</option>
+                    <option value="three">Three Scoops</option>
+                </select> <br>
+                <h4>Flavour</h4>
+                <label>
+                    <input type="radio" id="vanilla" name="icecream" value="vanilla">
+                    Vanilla
+                </label>
+                <label>
+                    <input type="radio" id="choco" name="icecream" value="choco">
+                    Choclate</label>
+                <label>
+                    <input type="radio" id="strawberry" name="icecream" value="strawberry">
+                    Strawberry</label><br>
+
+                <div id="toppings">
+                    <h4>Toppings</h4>
+                    <label>
+                        <input type="radio" id="sprinkles" name="toppings" value="sprinkles">
+                        Sprinkles
+                    </label>
+                    <label>
+                        <input type="radio" id="cookies" name="toppings" value="cookies">
+                        Cookie Chips
+                    </label>
+                    <label>
+                        <input type="radio" id="fruits" name="toppings" value="fruits">
+                        Fruits
+                    </label><br>
+                    <label>
+                        <input type="radio" id="cream" name="toppings" value="cream">
+                        Heavy Cream
+                    </label>
                 </div>
-                </fieldset>
-            </form>
+                <div>
+                    <h4>Container</h4>
+                    <select name="container" id="name">
+                        <option value="waffle">Waffle</option>
+                        <option value="glass bevarege">Glass bevarige</option>
+                        <option value="papercup">Papercup</option>
+                    </select> <br>
+
+                    <button id="add" type="button">ORDER</button>
+                    <button id="suprise" type="button">SUPRISE</button>
+                </div>
+        </div>
+        </fieldset>
+        </form>
+    </main>
     </main>
 </body>
 
