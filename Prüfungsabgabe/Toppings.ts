@@ -1,7 +1,7 @@
-namespace IceShop{
+namespace IceShop {
     export class Toppings extends IceCream {
         topping: string;
-        color:string;
+        color: string;
 
         constructor() {
             super();
@@ -26,7 +26,7 @@ namespace IceShop{
             return randomColor;
         }
 
-    
+
     // drawOrder(): void{
 
 
@@ -44,7 +44,7 @@ namespace IceShop{
     //     crc2.fillRect(130, -270, 8, 2);
     //     crc2.fillRect(130, -190, 8, 2);
     //     crc2.closePath();
-        
+
     //     crc2.beginPath();
     //     crc2.rotate((45 * Math.PI) / 180);
     //     crc2.fillStyle = this.changeColor();
@@ -89,19 +89,31 @@ namespace IceShop{
     //     crc2.ellipse(280, 120, 8, 2, 3, 0, 20);
     //     crc2.ellipse(230, 120, 8, 2, 3, 0, 20);
     //     crc2.fill();
-        
+
     // }
     // if (onclick on fruits ){
 
-        
+
     // }
     // if (onclick on heavy cream){
+              
+    //             crc2.fillStyle = 'white';
+    //             crc2.strokeStyle = 'lightgrey';
         
-    // }
+    //             crc2.beginPath();
+    //             crc2.moveTo(100, 50);
+    //             crc2.bezierCurveTo(60, 70, 30, 120, 40, 150);
+    //             crc2.bezierCurveTo(50, 180, 150, 180, 160, 150);
+    //             crc2.bezierCurveTo(170, 120, 140, 70, 100, 50);
+    //             crc2.closePath();
+    //             crc2.fill();
+    //             crc2.stroke();
+
+    //     }
 
 
 
-    // }
-    
+    //     }
+
     }
 }
