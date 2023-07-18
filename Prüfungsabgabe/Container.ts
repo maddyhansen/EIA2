@@ -4,20 +4,20 @@ namespace IceShop{
 
 
     
-    drawOrder(): void{
+    // drawOrder(): void{
 
-    if (onclick glass ){
+    // if (onclick glass ){
 
-    }
+    // }
 
-    if (onclick papercup){
+    // if (onclick papercup){
         
-    }
-    if (onclick waffle ){
+    // }
+    // if (onclick waffle ){
         
-    }
+    // }
 
-    }
+    // }
     
     }
 }

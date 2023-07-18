@@ -17,6 +17,7 @@ var IceShop;
         // handleGame();
         document.getElementById("canvas").classList.remove("hidden");
         document.getElementById("gamestart").classList.add("hidden");
+        //document.getElementById("order")!.classList.add("hidden");
         document.getElementById("order").classList.remove("hidden");
         document.getElementById("list").classList.remove("hidden");
     }

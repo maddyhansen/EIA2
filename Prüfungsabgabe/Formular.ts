@@ -5,7 +5,9 @@ namespace IceShop {
         SupriseButton();
         edit.addEventListener("click", editButton);
         document.querySelector("#add")!.addEventListener("click", orderButton);
-        submit.addEventListener("click", sendTask);
+        submit.addEventListener("click", sendOrder);
+        document.querySelector("#suprise")!.addEventListener("click", SupriseButton);
+        deleteOrder();
     }
 
     export interface Data {
@@ -16,11 +18,11 @@ namespace IceShop {
     edit.setAttribute("id", "edit");
     edit.innerHTML = "Edit";
 
-    let newdiv = document.createElement("div");
-    newdiv.setAttribute("id", "orders");
+    let newOrder = document.createElement("div");
+    newOrder.setAttribute("id", "orders");
 
-    let newP = document.createElement("p");
-    newP.setAttribute("id", "newp");
+    let newInfo = document.createElement("p");
+    newInfo.setAttribute("id", "newp");
 
     let form: HTMLFormElement = document.querySelector('#myform')!;
 
@@ -58,7 +60,7 @@ namespace IceShop {
 
     export let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#add");
 
-    export async function sendTask(_event: Event): Promise<void> { //Laura Kupferschmid helped me fixing the code, so it sends now the inputs/Orders to the Server
+    export async function sendOrder(_event: Event): Promise<void> { //Laura Kupferschmid helped me fixing the code, so it sends now the inputs/Orders to the Server
         let formData: FormData = new FormData(form);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         query.set("command", "insert");
@@ -81,23 +83,37 @@ namespace IceShop {
     export function orderButton(e: any): any {
         getData();
 
-        document.getElementById("list")!.appendChild(newdiv);
-        document.querySelector("#list")!.appendChild(newP);
+        document.getElementById("list")!.appendChild(newOrder);
+        document.querySelector("#list")!.appendChild(newInfo);
 
-        newP.innerHTML = "Scoops: " + Orders[0] + ", <br> Flavour: " + Orders[1] + ", <br> Toppings: " + Orders[2] + "  <br> Container: " + Orders[3];
+        newInfo.innerHTML = "Scoops: " + Orders[0] + ", <br> Flavour: " + Orders[1] + ", <br> Toppings: " + Orders[2] + "  <br> Container: " + Orders[3];
         e.preventDefault();
-        newP.appendChild(edit);
-        document.getElementById("add")!.classList.add("hidden");
+        newInfo.appendChild(edit);
+        document.getElementById("order")!.classList.add("hidden");
     }
 
     function editButton(): void {
         document.getElementById("order")!.classList.remove("hidden");
-        document.getElementById("list")!.removeChild(newdiv);
-        document.querySelector("#list")!.removeChild(newP);
+        document.getElementById("list")!.removeChild(newOrder);
+        document.querySelector("#list")!.removeChild(newInfo);
+    }
+
+    async function deleteOrder() {
+        console.log("Hi, I am done!")
+        newOrder!.parentNode!.removeChild(newInfo);
+        alert("Youre deleting the order.")
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        query.set("command", "delete");
+        query.set("collection", "Order");
+        query.set("delete", "id");
+        query.set("id", "?");
+        await fetch("https://webuser.hs-furtwangen.de/~hansenma/database/?" + query.toString());
+        
     }
 
     function SupriseButton() {
     //SupriseOrder(); 
+    document.getElementById("order")!.classList.add("hidden");
     }
 
 
