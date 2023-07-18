@@ -1,17 +1,19 @@
 namespace IceShop {
 
-export class IceCream {
+    export class IceCream {
 
-    position: Vector;
-    name: string; 
+        position: Vector;
+        name: string;
 
-    constructor() {
+        constructor() {
+            this.position = new Vector(0, 0)
+        }
+  
+        
+
+        drawOrder(): void {
+
+        }
 
     }
-
-    drawOrder(): void{
-
-    }
-
-}
 }

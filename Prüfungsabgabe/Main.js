@@ -14,10 +14,20 @@ var IceShop;
     }
     IceShop.handleload = handleload;
     function startGame() {
+        // handleGame();
         document.getElementById("canvas").classList.remove("hidden");
         document.getElementById("gamestart").classList.add("hidden");
         document.getElementById("order").classList.remove("hidden");
         document.getElementById("list").classList.remove("hidden");
     }
+    // let entrance :  ; 
+    // let exit =; 
+    // function handleGame(){
+    //     if (){
+    //        giveOrder()
+    //    }
+    //    if(){
+    //     }
+    // }
 })(IceShop || (IceShop = {}));
 //# sourceMappingURL=Main.js.map

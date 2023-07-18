@@ -1,6 +1,7 @@
 namespace IceShop{
     export class Toppings extends IceCream {
-        color: string;
+        topping: string;
+        color:string;
 
         constructor() {
             super();

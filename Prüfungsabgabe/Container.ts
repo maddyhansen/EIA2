@@ -10,7 +10,7 @@ namespace IceShop{
 
     }
 
-    if (onclick papercup ){
+    if (onclick papercup){
         
     }
     if (onclick waffle ){

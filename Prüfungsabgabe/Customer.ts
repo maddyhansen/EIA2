@@ -62,7 +62,7 @@ namespace IceShop {
                 console.log(this.position)
             }
 
-            if (this.look == "unwell") {
+            if (this.look == "unwell") { //this.look == 1min 
                 //Smileunwell
                 //Head
                 crc2.beginPath();

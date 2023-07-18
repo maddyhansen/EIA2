@@ -10,10 +10,10 @@ namespace IceShop{
             this.velocity = new Vector(50, 0);
             this.velocity = new Vector(120, 20);
 
-            this.position = new Vector(Math.random() * crc2.canvas.width, Math.random() * crc2.canvas.height)
+            this.position = new Vector(0,0)
         }
 
-        DoGame(_timeslice: number): void {
+        move(_velocity:Vector): void {
 
         }
 

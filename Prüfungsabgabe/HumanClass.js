@@ -7,9 +7,9 @@ var IceShop;
         constructor() {
             this.velocity = new IceShop.Vector(50, 0);
             this.velocity = new IceShop.Vector(120, 20);
-            this.position = new IceShop.Vector(Math.random() * IceShop.crc2.canvas.width, Math.random() * IceShop.crc2.canvas.height);
+            this.position = new IceShop.Vector(0, 0);
         }
-        DoGame(_timeslice) {
+        move(_velocity) {
         }
         drawHumans() {
         }

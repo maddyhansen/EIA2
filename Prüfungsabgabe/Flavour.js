@@ -6,56 +6,52 @@ var IceShop;
             if (onclick)
                 Choco;
             {
-                if (1)
-                    Scoop = 1;
-                Choco;
-                Ball;
-                {
-                    IceShop.crc2.fillStyle = "#5d330e";
-                    IceShop.crc2.beginPath();
-                    IceShop.crc2.arc(700, 275, 30, 0, 2 * Math.PI);
-                    IceShop.crc2.fill();
-                    IceShop.crc2.closePath();
-                }
-                if (2)
-                    Scoop = 2;
-                Choco;
-                Ball;
-                {
-                    IceShop.crc2.fillStyle = "#5d330e";
-                    IceShop.crc2.beginPath();
-                    IceShop.crc2.arc(700, 275, 30, 0, 2 * Math.PI);
-                    IceShop.crc2.fill();
-                    IceShop.crc2.closePath();
-                    IceShop.crc2.fillStyle = "#733f11";
-                    IceShop.crc2.beginPath();
-                    IceShop.crc2.arc(700, 300, 30, 0, 2 * Math.PI);
-                    IceShop.crc2.fill();
-                    IceShop.crc2.closePath();
-                }
-                if (3)
-                    Scoop = 3;
-                Choco;
-                Ball;
-                {
-                    IceShop.crc2.fillStyle = "#5d330e";
-                    IceShop.crc2.beginPath();
-                    IceShop.crc2.arc(700, 275, 30, 0, 2 * Math.PI);
-                    IceShop.crc2.fill();
-                    IceShop.crc2.closePath();
-                    IceShop.crc2.fillStyle = "#43240a";
-                    IceShop.crc2.beginPath();
-                    IceShop.crc2.arc(715, 250, 30, 0, 2 * Math.PI);
-                    IceShop.crc2.fill();
-                    IceShop.crc2.closePath();
-                    IceShop.crc2.fillStyle = "#733f11";
-                    IceShop.crc2.beginPath();
-                    IceShop.crc2.arc(725, 275, 30, 0, 2 * Math.PI);
-                    IceShop.crc2.fill();
-                    IceShop.crc2.closePath();
-                }
+                //if (1 Scoop = 1 Choco Ball) {
+                IceShop.crc2.fillStyle = "#5d330e";
+                IceShop.crc2.beginPath();
+                IceShop.crc2.arc(700, 275, 30, 0, 2 * Math.PI);
+                IceShop.crc2.fill();
+                IceShop.crc2.closePath();
+            }
+            if (2)
+                Scoop = 2;
+            Choco;
+            Ball;
+            {
+                IceShop.crc2.fillStyle = "#5d330e";
+                IceShop.crc2.beginPath();
+                IceShop.crc2.arc(700, 275, 30, 0, 2 * Math.PI);
+                IceShop.crc2.fill();
+                IceShop.crc2.closePath();
+                IceShop.crc2.fillStyle = "#733f11";
+                IceShop.crc2.beginPath();
+                IceShop.crc2.arc(700, 300, 30, 0, 2 * Math.PI);
+                IceShop.crc2.fill();
+                IceShop.crc2.closePath();
+            }
+            if (3)
+                Scoop = 3;
+            Choco;
+            Ball;
+            {
+                IceShop.crc2.fillStyle = "#5d330e";
+                IceShop.crc2.beginPath();
+                IceShop.crc2.arc(700, 275, 30, 0, 2 * Math.PI);
+                IceShop.crc2.fill();
+                IceShop.crc2.closePath();
+                IceShop.crc2.fillStyle = "#43240a";
+                IceShop.crc2.beginPath();
+                IceShop.crc2.arc(715, 250, 30, 0, 2 * Math.PI);
+                IceShop.crc2.fill();
+                IceShop.crc2.closePath();
+                IceShop.crc2.fillStyle = "#733f11";
+                IceShop.crc2.beginPath();
+                IceShop.crc2.arc(725, 275, 30, 0, 2 * Math.PI);
+                IceShop.crc2.fill();
+                IceShop.crc2.closePath();
             }
         }
+        // }
         if(onclick, vanille) {
             if (onclick)
                 Choco;

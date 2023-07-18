@@ -50,7 +50,7 @@ var IceShop;
                 IceShop.crc2.beginPath();
                 console.log(this.position);
             }
-            if (this.look == "unwell") {
+            if (this.look == "unwell") { //this.look == 1min 
                 //Smileunwell
                 //Head
                 IceShop.crc2.beginPath();

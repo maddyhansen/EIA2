@@ -2,22 +2,23 @@
 var IceShop;
 (function (IceShop) {
     function giveOrder() {
-        edit.addEventListener("click", editbtn);
-        document.querySelector("#add").addEventListener("click", Orderbutton);
+        //drawOrder();
+        SupriseButton();
+        edit.addEventListener("click", editButton);
+        document.querySelector("#add").addEventListener("click", orderButton);
         IceShop.submit.addEventListener("click", sendTask);
     }
     IceShop.giveOrder = giveOrder;
     ;
-    let edit = document.createElement("button"); // edit button erstellen
+    let edit = document.createElement("button");
     edit.setAttribute("id", "edit");
     edit.innerHTML = "Edit";
-    let newdiv = document.createElement("div"); // div element order  erstellen
+    let newdiv = document.createElement("div");
     newdiv.setAttribute("id", "orders");
-    let newP = document.createElement("p"); // p element für to do erstellen
+    let newP = document.createElement("p");
     newP.setAttribute("id", "newp");
     let form = document.querySelector('#myform');
     IceShop.Orders = [];
-    // aufruf bei order button
     function getData() {
         let IceOrder;
         let formData = new FormData(form);
@@ -60,22 +61,23 @@ var IceShop;
     }
     IceShop.communicate = communicate;
     communicate("data.json");
-    function Orderbutton(e) {
+    function orderButton(e) {
         getData();
         document.getElementById("list").appendChild(newdiv);
         document.querySelector("#list").appendChild(newP);
         newP.innerHTML = "Scoops: " + IceShop.Orders[0] + ", <br> Flavour: " + IceShop.Orders[1] + ", <br> Toppings: " + IceShop.Orders[2] + "  <br> Container: " + IceShop.Orders[3];
         e.preventDefault();
         newP.appendChild(edit);
-        document.getElementById("order").classList.add("hidden");
+        document.getElementById("add").classList.add("hidden");
     }
-    IceShop.Orderbutton = Orderbutton;
-    function editbtn() {
+    IceShop.orderButton = orderButton;
+    function editButton() {
         document.getElementById("order").classList.remove("hidden");
         document.getElementById("list").removeChild(newdiv);
         document.querySelector("#list").removeChild(newP);
     }
     function SupriseButton() {
+        //SupriseOrder(); 
     }
 })(IceShop || (IceShop = {}));
 //# sourceMappingURL=Formular.js.map

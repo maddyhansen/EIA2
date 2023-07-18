@@ -2,6 +2,7 @@
 var IceShop;
 (function (IceShop) {
     class Toppings extends IceShop.IceCream {
+        topping;
         color;
         constructor() {
             super();

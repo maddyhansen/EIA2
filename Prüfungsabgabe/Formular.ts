@@ -1,26 +1,31 @@
 namespace IceShop {
 
     export function giveOrder() {
-        edit.addEventListener("click", editbtn);
-        document.querySelector("#add")!.addEventListener("click", Orderbutton);
+        //drawOrder();
+        SupriseButton();
+        edit.addEventListener("click", editButton);
+        document.querySelector("#add")!.addEventListener("click", orderButton);
         submit.addEventListener("click", sendTask);
     }
 
-    export interface data {
+    export interface Data {
         [key: string]: FormDataEntryValue;
     };
-    let edit = document.createElement("button");   // edit button erstellen
+
+    let edit = document.createElement("button");
     edit.setAttribute("id", "edit");
     edit.innerHTML = "Edit";
-    let newdiv = document.createElement("div");    // div element order  erstellen
+
+    let newdiv = document.createElement("div");
     newdiv.setAttribute("id", "orders");
-    let newP = document.createElement("p");    // p element für to do erstellen
+
+    let newP = document.createElement("p");
     newP.setAttribute("id", "newp");
+
     let form: HTMLFormElement = document.querySelector('#myform')!;
 
     export let Orders: String[] = [];
 
-    // aufruf bei order button
     export function getData(): String[] {
 
         let IceOrder: String[];
@@ -53,7 +58,7 @@ namespace IceShop {
 
     export let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#add");
 
-    export async function sendTask(_event: Event): Promise<void> { //link zum versenden funktioniert nicht
+    export async function sendTask(_event: Event): Promise<void> { //Laura Kupferschmid helped me fixing the code, so it sends now the inputs/Orders to the Server
         let formData: FormData = new FormData(form);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         query.set("command", "insert");
@@ -65,7 +70,7 @@ namespace IceShop {
     export async function communicate(_url: RequestInfo): Promise<void> {
         let response: Response = await fetch(_url);
         let offer: string = await response.text();
-        let gotdata: data = JSON.parse(offer);
+        let gotdata: Data = JSON.parse(offer);
         console.log("this" + gotdata);
         console.log("Response", response);
         console.log("before" + offer);
@@ -73,7 +78,7 @@ namespace IceShop {
 
     communicate("data.json");
 
-    export function Orderbutton(e: any): any {
+    export function orderButton(e: any): any {
         getData();
 
         document.getElementById("list")!.appendChild(newdiv);
@@ -82,17 +87,17 @@ namespace IceShop {
         newP.innerHTML = "Scoops: " + Orders[0] + ", <br> Flavour: " + Orders[1] + ", <br> Toppings: " + Orders[2] + "  <br> Container: " + Orders[3];
         e.preventDefault();
         newP.appendChild(edit);
-        document.getElementById("order")!.classList.add("hidden");
+        document.getElementById("add")!.classList.add("hidden");
     }
 
-    function editbtn(): void {
+    function editButton(): void {
         document.getElementById("order")!.classList.remove("hidden");
         document.getElementById("list")!.removeChild(newdiv);
         document.querySelector("#list")!.removeChild(newP);
     }
 
     function SupriseButton() {
-
+    //SupriseOrder(); 
     }
 
 

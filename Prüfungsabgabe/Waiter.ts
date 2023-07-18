@@ -1,32 +1,11 @@
 namespace IceShop {
     export class Waiter extends Human {
-        look: string;
-        color: string;
 
         constructor() {
             super();
-            this.color = this.changeColor();
         }
 
-        getRandomNumber(_max: number, _min: number = 0): number {
-            return Math.floor(Math.random() * _max) + _min;
-        }
-
-        changeColor(): string {
-            const intensity = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "A", "B", "C", "D", "E", "F"];
-            let randomColor1 = intensity[Math.floor(Math.random() * intensity.length)];
-            let randomColor2 = intensity[Math.floor(Math.random() * intensity.length)];
-            let randomColor3 = intensity[Math.floor(Math.random() * intensity.length)];
-            let randomColor4 = intensity[Math.floor(Math.random() * intensity.length)];
-            let randomColor5 = intensity[Math.floor(Math.random() * intensity.length)];
-            let randomColor6 = intensity[Math.floor(Math.random() * intensity.length)];
-            const randomColor: string = `#${randomColor1}${randomColor2}${randomColor3}${randomColor4}${randomColor5}${randomColor6}`;
-            crc2.fillStyle = "randomColor";
-
-            return randomColor;
-        }
-
-        DoGame(_timeslice: number): void {
+        move(_verlocity: Vector): void {
 
         }
 
