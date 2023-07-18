@@ -12,17 +12,4 @@ namespace IceShop {
     //   let toppings: string[] = ['heavy cream', 'fruits', 'cookies', 'sprinkles'];
     //   let containerOptions: string[] = ['waffle', 'glass beverage', 'paper cup'];
 
-    //   function getRandomOption (suprise): any {
-    //     const randomIndex = Math.floor(Math.random() * suprise.length);
-    //     return suprise[randomIndex];
-    //   }
-
-    //   const iceCream: IceCreamOptions = {
-    //     flavour: getRandomOption(flavours),
-    //     scoops: getRandomOption(scoopOptions),
-    //     toppings: getRandomOption(toppings),
-    //     container: getRandomOption(containerOptions),
-    //   };
-
-   // console.log(iceCream);
 }
