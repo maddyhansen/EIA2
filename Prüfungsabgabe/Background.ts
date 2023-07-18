@@ -10,8 +10,8 @@ namespace IceShop {
         // drawHuman();
         // drawWaiter();
         // drawFlavour();
-        //drawToppings();
-        drawCookies();
+        // drawToppings();
+        // drawCookies();
         console.log("handleLoad working");
     };
 

@@ -11,8 +11,8 @@ var IceShop;
         // drawHuman();
         // drawWaiter();
         // drawFlavour();
-        //drawToppings();
-        drawCookies();
+        // drawToppings();
+        // drawCookies();
         console.log("handleLoad working");
     }
     IceShop.drawBackground = drawBackground;
